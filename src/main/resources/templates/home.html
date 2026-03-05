@@ -10,12 +10,46 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+	
+	
+	<style>
+	  .no-scrollbar::-webkit-scrollbar {
+	    display: none;
+	  }
+
+	  .program-card {
+	    flex: 0 0 25%;
+	  }
+
+	  @media (max-width: 1024px) {
+	    .program-card {
+	      flex: 0 0 50%;
+	    }
+	  }
+
+	  @media (max-width: 768px) {
+	    .program-card {
+	      flex: 0 0 100%;
+	    }
+	  }
+	</style>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+	
+	<script>
+	  const slider = document.getElementById("programSlider");
+
+	  setInterval(() => {
+	    slider.scrollBy({
+	      left: 320,
+	      behavior: "smooth"
+	    });
+	  }, 3000);
+	</script>
 
     <style>
       [x-cloak] {
@@ -26,7 +60,7 @@
       }
     </style>
   </head>
-  <body class="mx-3 sm:mx-25 lg:mx-35 xl:mx-35 font-sans text-gray-900">
+  <body class="mx-3 sm:mx-25 m-0 p-0 lg:mx-35 xl:mx-35 font-sans text-gray-900">
     <!-- Navbar -->
 	<nav class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6">
 	  
@@ -250,7 +284,7 @@
         class="max-w-7xl w-full flex flex-col lg:flex-row gap-12 items-center"
       >
         <div class="lg:w-1/3 space-y-6">
-          <h1 class="text-5xl font-bold text-slate-900 leading-tight">
+          <h1 class="text-5xl  text-slate-900 leading-tight">
              Make your kids master 
           </h1>
           <p class="text-slate-600 text-sm leading-relaxed">
@@ -283,7 +317,7 @@
             >
               <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
               <p class="text-xs leading-snug">
-                TYour Child Is Not Just Preparing for School. They Are Preparing for the World.
+                Your Child Is Not Just Preparing for School. They Are Preparing for the World.
               </p>
             </div>
           </div>
@@ -326,6 +360,70 @@
         </div>
       </div>
     </section>
+	
+	
+	
+	<!-- camparision start -->
+
+	<!-- Comparison Section Start -->
+
+	<section class="w-full bg-[#F5A800] py-20">
+
+	  <div class="max-w-5xl mx-auto px-6">
+
+	    <div class="grid md:grid-cols-2 gap-16 items-stretch">
+
+	      <!-- LEFT CARD -->
+	      <div class="relative bg-[#EDEDED] rounded-2xl p-10">
+
+	        <!-- Floating Title -->
+	        <div class="absolute -top-6 left-1/2 -translate-x-1/2 
+	                    bg-[#1E1B8F] text-white 
+	                    px-8 py-3 rounded-xl 
+	                    text-lg font-semibold shadow-md">
+	          Typical Preschool
+	        </div>
+
+	        <ul class="mt-6 space-y-3 text-[18px] font-normal text-black leading-relaxed">
+	          <li>• Focus on rote phonics</li>
+	          <li>• Worksheets & memorisation</li>
+	          <li>• Limited exposure</li>
+	          <li>• Academic-only focus</li>
+	          <li>• No stage exposure</li>
+	          <li>• No tech integration</li>
+	        </ul>
+
+	      </div>
+
+	      <!-- RIGHT CARD -->
+	      <div class="relative bg-[#EDEDED] rounded-2xl p-10">
+
+	        <!-- Floating Title -->
+	        <div class="absolute -top-6 left-1/2 -translate-x-1/2 
+	                    bg-[#1E1B8F] text-white 
+	                    px-8 py-3 rounded-xl 
+	                    text-lg font-semibold shadow-md">
+	          Oratrics Kidzz
+	        </div>
+
+	        <ul class="mt-6 space-y-3 text-[18px] font-normal text-black leading-relaxed">
+	          <li>• Advanced phonics + articulation training</li>
+	          <li>• Experiential, activity-based learning</li>
+	          <li>• Global student interactions (US, UK, UAE, Canada)</li>
+	          <li>• Personality + Leadership + Communication</li>
+	          <li>• Weekly speaking circles</li>
+	          <li>• AI, Robotics & Creative Labs (age appropriate)</li>
+	        </ul>
+
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	</section>
+
+	<!-- Comparison Section End -->
 
     <!-- client say -->
     <section>
@@ -521,287 +619,142 @@
   }, 3000);
 </script>
 
-    <div
-      x-data="{ expanded: false }"
-      class="bg-[#1A1A5E] overflow-hidden lg:h-fit rounded-2xl min-h-screen p-10 font-sans text-white"
-    >
-      <div class="max-w-4xl mx-auto text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-2">Our Global</h2>
-        <h3
-          class="text-4xl md:text-6xl font-bold text-[#FFB800] mb-6"
-          style="font-family: Caveat, cursive"
-        >
-          Early Childhood Programs
-        </h3>
-        <p
-          class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto mb-8 uppercase tracking-wide"
-        >
-          Internationally Benchmarked Learning Pathways From Infancy To
-          Kindergarten Designed To Build Confident, Expressive And Future-Ready
-          Global Citizens.
-        </p>
-        <button
-          class="bg-white text-[#1A1A5E] px-8 py-3 rounded-full font-bold flex items-center gap-2 mx-auto hover:bg-gray-200 transition-colors"
-        >
-          Learn more
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L11.586 9H7a1 1 0 100 2h4.586l-2.293 2.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
 
-      <!-- progam cards -->
 
-      <div
-        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10 transition-all duration-1000 ease-in-out overflow-hidden"
-        :class="expanded ? 'max-h-[5000px]' : 'max-h-[950px]'"
-      >
-        <div
-          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
-        >
-          <div
-            class="relative lg:h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
-          >
-            <img
-              th:src="@{/images/rounded.png}"
-              alt="Childhood program"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute top-4 right-4 transform -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
-            >
-              <svg
-                class="w-6 h-6 text-slate-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="px-2 pb-4">
-            <h4 class="text-[10px] lg:text-xl font-bold mb-2">
-              Lorem ipsum diodet
-            </h4>
-            <p class="text-gray-500 text-[8px] lg:text-xs leading-relaxed">
-              Build confidence in communication, teamwork, and problem-solving.
-            </p>
-          </div>
-        </div>
 
-        <div
-          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
-        >
-          <div
-            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
-          >
-            <img
-             th:src="@{/images/rounded.png}"
-              alt="Childhood program"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
-            >
-              <svg
-                class="w-6 h-6 text-slate-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="px-2 pb-4">
-            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
-            <p class="text-gray-500 text-xs leading-relaxed">
-              Build confidence in communication, teamwork, and problem-solving.
-            </p>
-          </div>
-        </div>
+    
+      <!-- progam cards start -->
 
-        <div
-          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
-        >
-          <div
-            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
-          >
-            <img
-              th:src="@{/images/rounded.png}"
-              alt="Childhood program"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
-            >
-              <svg
-                class="w-6 h-6 text-slate-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="px-2 pb-4">
-            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
-            <p class="text-gray-500 text-xs leading-relaxed">
-              Build confidence in communication, teamwork, and problem-solving.
-            </p>
-          </div>
-        </div>
+	  <section class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#24135f] py-16" style="background:#24135f; padding:60px 0;">
 
-        <div
-          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
-        >
-          <div
-            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
-          >
-            <img
-             th:src="@{/images/rounded.png}"
-              alt="Childhood program"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
-            >
-              <svg
-                class="w-6 h-6 text-slate-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="px-2 pb-4">
-            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
-            <p class="text-gray-500 text-xs leading-relaxed">
-              Build confidence in communication, teamwork, and problem-solving.
-            </p>
-          </div>
-        </div>
+	    <div class="w-full max-w-7xl mx-auto px-6 text-center text-white">
 
-        <div
-          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
-        >
-          <div
-            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
-          >
-            <img
-             th:src="@{/images/rounded.png}"
-              alt="Childhood program"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
-            >
-              <svg
-                class="w-6 h-6 text-slate-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="px-2 pb-4">
-            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
-            <p class="text-gray-500 text-xs leading-relaxed">
-              Build confidence in communication, teamwork, and problem-solving.
-            </p>
-          </div>
-        </div>
+	      <h2 class="text-3xl font-bold mb-2">
+	        Our <span class="text-yellow-400">Early Childhood Programs</span>
+	      </h2>
 
-        <div
-          class="bg-white rounded-[2rem] p-4 text-slate-900 group cursor-pointer overflow-hidden transition-all hover:shadow-2xl"
-        >
-          <div
-            class="relative h-56 w-full rounded-[1.5rem] overflow-hidden mb-6"
-          >
-            <img
-              th:src="@{/images/rounded.png}"
-              alt="Childhood program"
-              class="w-full h-full object-cover"
-            />
-            <div
-              class="absolute top-4 right-4 -rotate-45 bg-white/90 p-2 rounded-full shadow-md group-hover:bg-gray-200 transition-colors"
-            >
-              <svg
-                class="w-6 h-6 text-slate-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="px-2 pb-4">
-            <h4 class="text-xl font-bold mb-2">Lorem ipsum diodet</h4>
-            <p class="text-gray-500 text-xs leading-relaxed">
-              Build confidence in communication, teamwork, and problem-solving.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="flex justify-center mt-12">
-        <button
-          x-show="!expanded"
-          @click="expanded = true"
-          class="bg-[#8B0000] text-white px-10 py-3 rounded-full hover:shadow-md transition-all shadow-xl"
-        >
-          Read More Programs
-        </button>
+	      <p class="opacity-80 mb-8 text-sm">
+	        Internationally Benchmarked Learning Pathways From Infancy To Kindergarten
+	      </p>
 
-        <button
-          x-show="expanded"
-          @click="expanded = false"
-          class="border-2 border-white text-white px-10 py-3 rounded-full font-bold hover:bg-white hover:text-[#1A1A5E] transition-all"
-        >
-          Show Less
-        </button>
-      </div>
-    </div>
+	      <div class="relative">
+
+	        <!-- Slider -->
+	        <div id="programSlider"
+	             class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar">
+
+	          <!-- 1 -->
+	          <div class="program-card bg-white rounded-4xl p-5 text-center">
+	            <img th:src="@{/images/programs/prenursery.png}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="Pre Nursery"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">Pre Nursery</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Play based foundation learning with sensory activities, motor skills and joyful classroom interaction.
+	            </p>
+	          </div>
+
+	          <!-- 2 -->
+	          <div class="program-card bg-white rounded-4xl p-5 text-center">
+	            <img th:src="@{/images/programs/nursery.png}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="Nursery"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">Nursery</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Language development, vocabulary building, social skills and confident expressive communication.
+	            </p>
+	          </div>
+
+	          <!-- 3 -->
+	          <div class="program-card bg-white rounded-4xl p-5 text-center">
+	            <img th:src="@{/images/programs/prekg.png}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="Pre-KG"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">Pre-KG</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Early literacy and numeracy with storytelling, leadership games and creative thinking skills.
+	            </p>
+	          </div>
+
+	          <!-- 4 -->
+	          <div class="program-card bg-white rounded-3xl p-5 text-center">
+	            <img th:src="@{/images/programs/lkg.png}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="LKG"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">LKG</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Reading readiness, teamwork focus, personality growth and basic critical thinking skills.
+	            </p>
+	          </div>
+
+	          <!-- 5 -->
+	          <div class="program-card bg-white rounded-3xl p-5 text-center">
+	            <img th:src="@{/images/programs/ukg.png}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="UKG"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">UKG</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Complete school readiness with presentation skills, confidence building and emotional growth.
+	            </p>
+	          </div>
+
+	          <!-- 6 -->
+	          <div class="program-card bg-white rounded-3xl p-5 text-center">
+	            <img th:src="@{/images/programs/extend.jpeg}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="Extended Care"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">Extended Care</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              After school support with homework help, creative activities and supervised care.
+	            </p>
+	          </div>
+
+	          <!-- 7 -->
+	          <div class="program-card bg-white rounded-3xl p-5 text-center">
+	            <img th:src="@{/images/programs/daycare.png}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="Daycare"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">Daycare</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Safe nurturing environment with play learning, communication skills and social bonding.
+	            </p>
+	          </div>
+
+	          <!-- 8 -->
+	          <div class="program-card bg-white rounded-3xl p-5 text-center">
+	            <img th:src="@{/images/programs/teacher.jpeg}"
+	                 class="rounded-xl mb-4 w-full"
+	                 alt="Teacher Training"/>
+	            <h4 class="font-bold text-lg text-[#24135f]">Teacher Training</h4>
+	            <p class="text-sm text-purple-700 mt-2">
+	              Professional training with modern teaching methods and classroom management skills.
+	            </p>
+	          </div>
+
+	        </div>
+
+	      </div>
+
+	    </div>
+	  </section>
+	  
+	  
+	  
+	  
+	  <!-- progam cards  end -->
+	  
+	  
+	  
+
+	  
+	  
+	  
+	  
+	  <!--  camparision  end -->
+	  
+	  
+	  
+	  
 
     <!-- transform Video -->
     <section class="my-10">
@@ -965,6 +918,67 @@
 
 </footer>
 	
+
+<section class="w-full bg-red-700 relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#24135f] py-16 text-white overflow-x-hidden">
+
+  <div class="w-full px-6 md:px-12 lg:px-20 py-16">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <!-- Column 1 -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Transparent</h2>
+        <p class="text-red-200 mb-6">
+          Fun, engaging <br>
+          and authentic webinars
+        </p>
+
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-gray-200">LinkedIn</a>
+          <a href="#" class="hover:text-gray-200">YouTube</a>
+          <a href="#" class="hover:text-gray-200">Twitter</a>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <h3 class="font-semibold mb-4">Product</h3>
+        <ul class="space-y-3 text-red-200">
+          <li><a href="#" class="hover:text-white">Features</a></li>
+          <li><a href="#" class="hover:text-white">HubSpot Integration</a></li>
+          <li><a href="#" class="hover:text-white">What's new</a></li>
+          <li><a href="#" class="hover:text-white">Pricing</a></li>
+          <li><a href="#" class="hover:text-white">Log in</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div>
+        <h3 class="font-semibold mb-4">Resources</h3>
+        <ul class="space-y-3 text-red-200">
+          <li><a href="#" class="hover:text-white">Learn</a></li>
+          <li><a href="#" class="hover:text-white">Videos</a></li>
+          <li><a href="#" class="hover:text-white">Help Center</a></li>
+          <li><a href="#" class="hover:text-white">Webinar Glossary</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div>
+        <h3 class="font-semibold mb-4">More</h3>
+        <ul class="space-y-3 text-red-200">
+          <li><a href="#" class="hover:text-white">Our story</a></li>
+          <li><a href="#" class="hover:text-white">We're hiring</a></li>
+          <li><a href="#" class="hover:text-white">Contrast vs. Livestorm</a></li>
+          <li><a href="#" class="hover:text-white">Contrast vs. Zoom</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 	
 	
 	
