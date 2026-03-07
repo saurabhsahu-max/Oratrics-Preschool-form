@@ -18,63 +18,81 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 
 
-<nav class="bg-[#FFB100] rounded-lg my-5 mx-[140px] px-4 py-4">
+	<nav class="bg-[#FFB100] rounded-lg my-5 px-4 py-4">
 
-<div class="flex items-center justify-between">
+			  <div class="flex items-center justify-between">
 
-<!-- Logo -->
-<img
-th:src="@{/images/logo.png}"
-alt="Oratrics Logo"
-class="h-[40px] md:h-[60px]"
-/>
+			    <!-- Logo -->
+			    <img
+			      th:src="@{/images/logo.png}"
+			      alt="Oratrics Logo"
+			      class="h-[40px] md:h-[60px]"
+			    />
 
-<!-- Desktop Menu -->
+			    <!-- Center Menu Desktop -->
+			    <div class="hidden md:flex flex-1 justify-center gap-8 font-semibold">
+			      <a th:href="@{/}" class="hover:text-white">Home</a>
+			      <a th:href="@{/about}" class="hover:text-white">About Us</a>
+			      <a th:href="@{/admission}" class="hover:text-white">Admission</a>
+			      <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+			    </div>
 
-<div class="hidden md:flex flex-1 justify-center gap-8 font-semibold">
+			    <!-- Right Section -->
+			    <div class="flex items-center">
 
-<a th:href="@{/}" class="hover:text-white">Home</a>
-<a th:href="@{/about}" class="hover:text-white">About Us</a>
-<a th:href="@{/admission}" class="hover:text-white">Admission</a>
-<a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+			      <!-- Desktop Button -->
+			      <a th:href="@{/register}"
+			         class="hidden md:block bg-[#8B0000] text-white px-5 py-2 rounded-sm">
+			        Register Now
+			      </a>
 
-</div>
+			      <!-- Hamburger -->
+			      <button id="menu-btn" class="md:hidden text-3xl ml-3">
+			        ☰
+			      </button>
 
-<!-- Right Side -->
+			    </div>
 
-<div class="flex items-center">
+			  </div>
 
-<a th:href="@{/register}"
-class="hidden md:block bg-[#8B0000] text-white px-5 py-2 rounded-sm">
-Register Now
-</a>
+			  <!-- Mobile Menu -->
+			  <div id="mobile-menu"
+			       class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
 
-<button id="menu-btn" class="md:hidden text-3xl ml-3">
-☰
-</button>
+			      <a th:href="@{/}" class="block">Home</a>
+			      <a th:href="@{/about}" class="block">About Us</a>
+			      <a th:href="@{/admission}" class="block">Admission</a>
+			      <a th:href="@{/gallery}" class="block">Gallery</a>
 
-</div>
+			      <a th:href="@{/register}"
+			         class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
+			        Register Now
+			      </a>
 
-</div>
+			  </div>
 
-<!-- Mobile Menu -->
+			</nav>
 
-<div id="mobile-menu"
-class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
+			<script>
 
-<a th:href="@{/}" class="block">Home</a>
-<a th:href="@{/about}" class="block">About Us</a>
-<a th:href="@{/admission}" class="block">Admission</a>
-<a th:href="@{/gallery}" class="block">Gallery</a>
+			const btn = document.getElementById("menu-btn");
+			const menu = document.getElementById("mobile-menu");
 
-<a th:href="@{/register}"
-class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
-Register Now
-</a>
+			btn.addEventListener("click", () => {
 
-</div>
+			  menu.classList.toggle("hidden");
 
-</nav>
+			  if(menu.classList.contains("hidden")){
+			      btn.innerHTML = "☰";
+			  } else {
+			      btn.innerHTML = "✕";
+			  }
+
+			});
+
+			</script>
+		
+		
 
 <!-- ================= 404 CONTENT ================= -->
 

@@ -1,353 +1,551 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oratrics Pre-school | Play, Learn, Grow</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
-      [x-cloak] {
-        display: none !important;
-      }
-      * {
-        font-family: "Outfit", sans-serif;
-      }
+        [x-cloak] {
+            display: none !important;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif !important;
+        }
     </style>
-  </head>
-  <body class="lg:mx-35 md:mx-10 mx-4 font-sans text-gray-900">
+</head>
+
+<body class="lg:mx-35 md:mx-10 mx-4 font-sans text-gray-900 overflow-x-hidden">
     <!-- Navbar -->
-	<nav class="bg-[#FFB100] rounded-lg my-5 px-4 py-4">
+    <nav class="bg-[#FFB100] rounded-lg my-5 px-4 py-4">
 
-		  <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between">
 
-		    <!-- Logo -->
-		    <img
-		      th:src="@{/images/logo.png}"
-		      alt="Oratrics Logo"
-		      class="h-[40px] md:h-[60px]"
-		    />
+            <!-- Logo -->
+            <img th:src="@{/images/logo.png}" alt="Oratrics Logo" class="h-[40px] md:h-[60px]" />
 
-		    <!-- Center Menu Desktop -->
-		    <div class="hidden md:flex flex-1 justify-center gap-8 font-semibold">
-		      <a th:href="@{/}" class="hover:text-white">Home</a>
-		      <a th:href="@{/about}" class="hover:text-white">About Us</a>
-		      <a th:href="@{/admission}" class="hover:text-white">Admission</a>
-		      <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
-		    </div>
+            <!-- Center Menu Desktop -->
+            <div class="hidden md:flex flex-1 justify-center gap-8 font-semibold">
+                <a th:href="@{/}" class="hover:text-white">Home</a>
+                <a th:href="@{/about}" class="hover:text-white">About Us</a>
+                <a th:href="@{/admission}" class="hover:text-white">Admission</a>
+                <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+            </div>
 
-		    <!-- Right Section -->
-		    <div class="flex items-center">
+            <!-- Right Section -->
+            <div class="flex items-center">
 
-		      <!-- Desktop Button -->
-		      <a th:href="@{/register}"
-		         class="hidden md:block bg-[#8B0000] text-white px-5 py-2 rounded-sm">
-		        Register Now
-		      </a>
+                <!-- Desktop Button -->
+                <a th:href="@{/register}" class="hidden md:block bg-[#8B0000] text-white px-5 py-2 rounded-sm">
+          Register Now
+        </a>
 
-		      <!-- Hamburger -->
-		      <button id="menu-btn" class="md:hidden text-3xl ml-3">
-		        ☰
-		      </button>
+                <!-- Hamburger -->
+                <button id="menu-btn" class="md:hidden text-3xl ml-3">
+          ☰
+        </button>
 
-		    </div>
+            </div>
 
-		  </div>
+        </div>
 
-		  <!-- Mobile Menu -->
-		  <div id="mobile-menu"
-		       class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
 
-		      <a th:href="@{/}" class="block">Home</a>
-		      <a th:href="@{/about}" class="block">About Us</a>
-		      <a th:href="@{/admission}" class="block">Admission</a>
-		      <a th:href="@{/gallery}" class="block">Gallery</a>
+            <a th:href="@{/}" class="block">Home</a>
+            <a th:href="@{/about}" class="block">About Us</a>
+            <a th:href="@{/admission}" class="block">Admission</a>
+            <a th:href="@{/gallery}" class="block">Gallery</a>
 
-		      <a th:href="@{/register}"
-		         class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
-		        Register Now
-		      </a>
+            <a th:href="@{/register}" class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
+        Register Now
+      </a>
 
-		  </div>
+        </div>
 
-		</nav>
+    </nav>
 
-		<script>
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
 
-		const btn = document.getElementById("menu-btn");
-		const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
 
-		btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
 
-		  menu.classList.toggle("hidden");
+            if (menu.classList.contains("hidden")) {
+                btn.innerHTML = "☰";
+            } else {
+                btn.innerHTML = "✕";
+            }
 
-		  if(menu.classList.contains("hidden")){
-		      btn.innerHTML = "☰";
-		  } else {
-		      btn.innerHTML = "✕";
-		  }
+        });
+    </script>
 
-		});
 
-		</script>
-	
-	
-	
-	
+
+
 
     <!-- Hero Section -->
-    <section
-      class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-10 items-center"
-    >
-      <!-- Image -->
-      <div class="order-2 md:order-1">
-        <img th:src="@{/images/hero.png}" alt="Hero Image" class="w-full" />
-      </div>
+    <section class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <!-- Image -->
+        <div class="order-2 md:order-1">
+            <img th:src="@{/images/hero.png}" alt="Hero Image" class="w-full" />
+        </div>
 
-      <!-- Content -->
-      <div class="order-1 md:order-2">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Who we are?</h2>
-        <p class="text-gray-600 mb-6 text-sm md:text-base">
-          Lorem Ipsum has been the industry's standard dummy text... Lorem Ipsum
-          has been the industry's standard dummy text ever since the 1500s, when
-          an unknown printer took a galley of type and scrambled it to make a
-          type specimen book. Lorem Ipsum has been the industry's standard dummy
-          text ever since the 1500s, when an unknown printer took a galley of
-          type and scrambled it to make a type specimen book.
-        </p>
-        <button
-          class="bg-yellow-500 text-white px-6 py-3 rounded-full text-sm md:text-base"
-        >
-          Explore More
-        </button>
-      </div>
+        <!-- Content -->
+        <div class="order-1 md:order-2">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Who we are?</h2>
+            <p class="text-gray-600 mb-6 text-sm md:text-base">
+                Oratrics Kidzz is the early foundation arm of Oratrics: The Future Human School, an international educational platform present in more than 22+ countries & a family of 50000+ individuals connected globally. We focus upon future skills apart from academics
+                like personality development, public speaking, creative writing, conceptual mathematics, leadership development, financial literacy, AI & Robotics impacting learners worldwide.
+            </p>
+            <button class="bg-yellow-500 text-white px-6 py-3 rounded-full text-sm md:text-base">
+        Explore More
+      </button>
+        </div>
     </section>
 
     <!-- Title Section with Bird -->
     <div class="max-w-7xl mx-auto px-4 py-4 md:py-8">
-      <div
-        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
-      >
-        <h2 class="text-3xl md:text-3xl lg:text-4xl font-bold">
-          Preparing Students to Achieve
-          <span class="text-[#800000] block md:inline">Success</span>
-        </h2>
-        <img src="/images/bird.png" class="h-8 sm:h-10 lg:h-14 object-contain" />
-      </div>
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <h2 class="text-3xl md:text-3xl lg:text-4xl font-bold">
+                Preparing Students to Achieve
+                <span class="text-[#800000] block md:inline">Success</span>
+            </h2>
+            <img src="/images/bird.png" class="h-8 sm:h-10 lg:h-14 object-contain" />
+        </div>
     </div>
+
+    <!-- Our Vision  Section start -->
+
+    <section class="py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+            <!-- Heading -->
+            <div class="text-center">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+                    Our Vision
+                </h2>
+
+                <p class="mt-4 text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    To build a generation of confident, articulate, emotionally intelligent, and globally aware children –
+                    <span class="text-yellow-500 font-semibold">
+            starting from preschool.
+          </span>
+                </p>
+
+            </div>
+
+
+            <!-- Responsive Layout -->
+            <div class="flex flex-col md:flex-row items-center gap-10">
+
+                <!-- LEFT CONTENT -->
+                <div class="md:w-1/2">
+
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-8">
+                        We envision Oratrics Kidzz as:
+                    </h3>
+
+                    <div class="space-y-6">
+
+                        <div class="flex items-start gap-3">
+                            ⭐
+                            <p class="text-gray-700 text-base md:text-lg">
+                                <span class="font-semibold text-gray-900">
+                  India’s global personality
+                </span> preschool
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            ⭐
+                            <p class="text-gray-700 text-base md:text-lg">
+                                <span class="font-semibold text-gray-900">
+                  A launchpad
+                </span> into the Future Human journey
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            ⭐
+                            <p class="text-gray-700 text-base md:text-lg">
+                                <span class="font-semibold text-gray-900">
+                  A bridge
+                </span> between academics and confidence
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            ⭐
+                            <p class="text-gray-700 text-base md:text-lg">
+                                <span class="font-semibold text-gray-900">
+                  A foundation
+                </span> for lifelong leadership
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT IMAGE -->
+                <div class="md:w-1/2 flex justify-center">
+
+                    <img th:src="@{/images/vision.png}" class="w-full max-w-xs md:max-w-md lg:max-w-lg" alt="Our Vision">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Our Vision  Section end -->
+
+
+
+
+
+
+
+
+
+
 
     <!-- Second Section -->
     <section class="py-12 md:py-16 bg-white">
-      <div
-        class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center"
-      >
-        <div>
-          <h3 class="text-2xl md:text-3xl font-bold mb-4">
-            Developing Confident and <br class="hidden sm:block" />
-            Successful Learners
-            <hr class="w-32 md:w-46 border-2 border-yellow-500 mt-2 mb-4" />
-          </h3>
-          <p class="text-gray-600 mb-6 text-sm md:text-base">
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut al Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            al
-          </p>
-          <button
-            class="bg-yellow-500 text-white px-5 py-2 rounded-full text-sm md:text-base"
-          >
-            View More
-          </button>
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">
+
+
+                    Where Confidence Begins <br class="hidden sm:block" /> Before Kindergarten
+                    <hr class="w-32 md:w-46 border-2 border-yellow-500 mt-2 mb-4" />
+                </h3>
+                <p class="text-gray-600 mb-6 text-sm md:text-base">
+                    At Oratrics Kidzz, we believe something powerful: <br /> Confidence is not built in college. It is not built in high school. It begins in the earliest years of life. <br /> Oratrics Kidzz is a globally inspired preschool designed to
+                    nurture confident communicators, curious thinkers, and future-ready learners from the age of 2.5 years onwards.
+
+                </p>
+                <button class="bg-yellow-500 text-white px-5 py-2 rounded-full text-sm md:text-base">
+          View More
+        </button>
+            </div>
+            <div>
+                <img th:src="@{/images/second.webp}" alt="Second Section Image" class="w-full" />
+            </div>
         </div>
-        <div>
-          <img
-            th:src="@{/images/second.webp}"
-            alt="Second Section Image"
-            class="w-full"
-          />
-        </div>
-      </div>
     </section>
 
     <!-- Third Section -->
     <section class="py-12 md:py-16 bg-white">
-      <div
-        class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center"
-      >
-        <div class="md:order-2">
-          <h3 class="text-2xl md:text-3xl font-bold mb-4">
-            Developing Confident and <br class="hidden sm:block" />
-            Successful Learners
-            <hr class="w-32 md:w-46 border-2 border-yellow-500 mt-2 mb-4" />
-          </h3>
-          <p class="text-gray-600 mb-8 text-sm md:text-base">
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut al Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            al
-          </p>
-          <button
-            class="bg-yellow-500 text-white px-5 py-2 rounded-full text-sm md:text-base"
-          >
-            View More
-          </button>
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="md:order-2">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">
+
+
+                    Our International <br class="hidden sm:block" /> Flagship Curriculum
+                    <hr class="w-32 md:w-46 border-2 border-yellow-500 mt-2 mb-4" />
+                </h3>
+                <p class="text-gray-600 mb-8 text-sm md:text-base">
+                    The Oratrics International Flagship Curriculum is inspired by: <br /> • US Early Learning Benchmarks<br /> • International language development standards<br /> • Global personality development frameworks<br /> • Social-emotional growth
+                    research
+                </p>
+                <button class="bg-yellow-500 text-white px-5 py-2 rounded-full text-sm md:text-base">
+          View More
+        </button>
+            </div>
+            <div class="md:order-1">
+                <img th:src="@{/images/student3.webp}" alt="Second Section Image" class="w-full" />
+            </div>
         </div>
-        <div class="md:order-1">
-          <img
-		  th:src="@{/images/student3.webp}"
-            alt="Second Section Image"
-            class="w-full"
-          />
-        </div>
-      </div>
     </section>
 
-<!-- WHAT WE DO SECTION -->
-<section class="relative overflow-hidden py-20 bg-[#F6E2A6]">
+    <!-- WHAT WE DO SECTION -->
+    <section class="relative overflow-hidden py-20 bg-[#F6E2A6]">
 
-  <!-- Curved Background -->
-  <div class="absolute inset-y-0 left-0 w-[88%] bg-[#EBCB82]"
-       style="border-radius:0 260px 260px 0;">
-  </div>
+        <!-- Curved Background -->
+        <div class="absolute inset-y-0 left-0 w-[88%] bg-[#EBCB82]" style="border-radius:0 260px 260px 0;">
+        </div>
 
-  <!-- Dotted Circle Design -->
-  <div class="absolute right-[-120px] bottom-[-100px]
+        <!-- Dotted Circle Design -->
+        <div class="absolute right-[-120px] bottom-[-100px]
       w-[420px] h-[420px]
       border border-gray-400 border-dashed
       rounded-full opacity-40">
-  </div>
+        </div>
 
-  <!-- Content -->
-  <div class="relative max-w-7xl mx-auto px-4"
-       x-data="serviceSlider()">
+        <!-- Content -->
+        <div class="relative max-w-7xl mx-auto px-4" x-data="serviceSlider()">
 
-    <!-- Heading -->
-    <h2 class="text-center text-3xl md:text-4xl font-bold text-[#3B2B4A] mb-14">
-      What We Do
-    </h2>
+            <!-- Heading -->
+            <h2 class="text-center text-3xl md:text-4xl font-bold text-[#3B2B4A] mb-4">
+                The Oratrics Philosophy
+            </h2>
 
-    <!-- Slider -->
-    <div class="overflow-hidden">
-      <div class="flex transition-transform duration-500"
-           :style="`transform: translateX(-${current * slideWidth}%)`">
+            <p class="text-center  mb-4">
 
-        <template x-for="item in services" :key="item.title">
-          <div class="w-full sm:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+                At Oratrics Kidzz, we operate on a simple principle <br /> We do not measure success only by worksheets completed. We measure it by:
+            </p>
 
-            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition h-full">
 
-              <!-- Icon -->
-              <div class="w-12 h-12 flex items-center justify-center
+            <!-- Slider -->
+            <div class="overflow-hidden">
+                <div class="flex transition-transform duration-500" :style="`transform: translateX(-${current * slideWidth}%)`">
+
+                    <template x-for="item in services" :key="item.title">
+            <div class="w-full sm:w-1/2 lg:w-1/4 flex-shrink-0 px-3">
+
+              <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition h-full">
+
+                <!-- Icon -->
+                <div class="w-12 h-12 flex items-center justify-center
                           bg-[#FBE4D8] rounded-lg mb-4 text-xl">
-                <span x-text="item.icon"></span>
+                  <span x-text="item.icon"></span>
+                </div>
+
+                <!-- Title -->
+                <h4 class="font-bold text-sm uppercase tracking-wide mb-2">
+                  <span x-text="item.title"></span>
+                </h4>
+
+                <!-- Description -->
+                <p class="text-sm text-gray-600 leading-relaxed" x-text="item.desc"></p>
+
               </div>
 
-              <!-- Title -->
-              <h4 class="font-bold text-sm uppercase tracking-wide mb-2">
-                <span x-text="item.title"></span>
-              </h4>
+            </div>
+          </template>
 
-              <!-- Description -->
-              <p class="text-sm text-gray-600 leading-relaxed"
-                 x-text="item.desc"></p>
+                </div>
+            </div>
+
+            <!-- Slider Arrows -->
+            <div class="flex gap-3 mt-12">
+                <button @click="prev" class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-white transition">
+          ←
+        </button>
+
+                <button @click="next" class="w-10 h-10 rounded-full border border-black bg-white flex items-center justify-center">
+          →
+        </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Alpine JS Slider -->
+    <script>
+        function serviceSlider() {
+            return {
+                current: 0,
+
+                services: [{
+                    icon: "📚",
+                    title: "Speech",
+                    desc: "A child volunteering to speak"
+                }, {
+                    icon: "🎨",
+                    title: "New Age Learning",
+                    desc: " A child asking curious questions"
+                }, {
+                    icon: "🤝",
+                    title: "Confidence",
+                    desc: " A child expressing ideas clearly"
+                }, {
+                    icon: "🛡️",
+                    title: "Leadership Development",
+                    desc: "A child showing leadership tendencies"
+                }, {
+                    icon: "🌱",
+                    title: "International Citizenship",
+                    desc: "Making kids interact with peers worldwide & making them a global citizen since childhood."
+                }],
+
+                get slideWidth() {
+                    if (window.innerWidth >= 1024) return 25;
+                    if (window.innerWidth >= 640) return 50;
+                    return 100;
+                },
+
+                next() {
+                    let visible =
+                        window.innerWidth >= 1024 ? 4 :
+                        window.innerWidth >= 640 ? 2 : 1;
+
+                    if (this.current < this.services.length - visible) {
+                        this.current++;
+                    }
+                },
+
+                prev() {
+                    if (this.current > 0) this.current--;
+                }
+            }
+        }
+    </script>
+
+
+    <section class="py-16 ">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+                <!-- CARD 1 -->
+
+                <div class="relative bg-white rounded-2xl shadow-md p-8 text-center border border-gray-200 transition duration-300 hover:shadow-[0_10px_35px_rgba(251,191,36,0.5)]">
+
+                    <!-- icon -->
+                    <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center text-3xl shadow">
+                        📚
+                    </div>
+
+                    <div class="mt-12">
+
+                        <h3 class="text-2xl font-bold text-yellow-600">
+                            Academic
+                        </h3>
+
+                        <h4 class="text-xl font-semibold text-gray-800 mb-6">
+                            Intelligence
+                        </h4>
+
+                        <ul class="space-y-4 text-gray-700 text-left">
+
+                            <li class="flex gap-3">
+                                ⭐ Advanced phonics & early literacy
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Numeracy & logical foundations
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Writing readiness
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Cognitive skill development
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="relative bg-white rounded-2xl shadow-md p-8 text-center border border-gray-200 transition duration-300 hover:shadow-[0_10px_35px_rgba(59,130,246,0.5)]">
+
+                    <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center text-3xl shadow">
+                        🎤
+                    </div>
+
+                    <div class="mt-12">
+
+                        <h3 class="text-2xl font-bold text-blue-600">
+                            Communication
+                        </h3>
+
+                        <h4 class="text-xl font-semibold text-gray-800 mb-6">
+                            Excellence
+                        </h4>
+
+                        <ul class="space-y-4 text-gray-700 text-left">
+
+                            <li class="flex gap-3">
+                                ⭐ Daily speaking circles
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Expressive language training
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Pronunciation clarity
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Vocabulary enrichment
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 3 -->
+
+                <div class="relative bg-white rounded-2xl shadow-md p-8 text-center border border-gray-200 transition duration-300 hover:shadow-[0_10px_35px_rgba(34,197,94,0.5)]">
+
+                    <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-3xl shadow">
+                        🌱
+                    </div>
+
+                    <div class="mt-12">
+
+                        <h3 class="text-2xl font-bold text-green-600">
+                            Personality &
+                        </h3>
+
+                        <h4 class="text-xl font-semibold text-gray-800 mb-6">
+                            Emotional Growth
+                        </h4>
+
+                        <ul class="space-y-4 text-gray-700 text-left">
+
+                            <li class="flex gap-3">
+                                ⭐ Confidence-building habits
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Responsibility development
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Team collaboration
+                            </li>
+
+                            <li class="flex gap-3">
+                                ⭐ Emotional intelligence activities
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
 
             </div>
 
-          </div>
-        </template>
+        </div>
 
-      </div>
-    </div>
-
-    <!-- Slider Arrows -->
-    <div class="flex gap-3 mt-12">
-      <button @click="prev"
-        class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center hover:bg-white transition">
-        ←
-      </button>
-
-      <button @click="next"
-        class="w-10 h-10 rounded-full border border-black bg-white flex items-center justify-center">
-        →
-      </button>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Alpine JS Slider -->
-<script>
-function serviceSlider() {
-  return {
-    current: 0,
-
-    services: [
-      {
-        icon: "📚",
-        title: "Early Learning",
-        desc: "Fun activities that build reading and thinking skills."
-      },
-      {
-        icon: "🎨",
-        title: "Creative Play",
-        desc: "Art and imagination activities for creativity."
-      },
-      {
-        icon: "🤝",
-        title: "Social Skills",
-        desc: "Teaching teamwork and communication."
-      },
-      {
-        icon: "🛡️",
-        title: "Safe Environment",
-        desc: "Secure and caring preschool environment."
-      },
-      {
-        icon: "🌱",
-        title: "Child Growth",
-        desc: "Helping emotional and mental development."
-      },
-      {
-        icon: "🎵",
-        title: "Music Activities",
-        desc: "Music sessions for confidence and fun."
-      }
-    ],
-
-    get slideWidth() {
-      if (window.innerWidth >= 1024) return 25;
-      if (window.innerWidth >= 640) return 50;
-      return 100;
-    },
-
-    next() {
-      let visible =
-        window.innerWidth >= 1024 ? 4 :
-        window.innerWidth >= 640 ? 2 : 1;
-
-      if (this.current < this.services.length - visible) {
-        this.current++;
-      }
-    },
-
-    prev() {
-      if (this.current > 0) this.current--;
-    }
-  }
-}
-</script>
+    </section>
 
 
 
@@ -360,38 +558,30 @@ function serviceSlider() {
 
 
 
- 
     <!-- Fifth Section -->
     <section class="py-12 md:py-16">
-      <div
-        class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-10 items-center"
-      >
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
-            Our Top Class & Professional Instructors
-          </h1>
-          <h3 class="text-xl md:text-2xl mb-4">Olivia Mia - 4.8 Ratings</h3>
-          <p class="text-gray-500 mb-4 text-sm md:text-base">
-            SkillGro The standard chunk of Lorem Ipsum used since the 1500s is
-            reproduced below for those interested Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          </p>
-          <button
-            class="bg-yellow-500 text-white px-6 py-2 rounded-full text-sm md:text-base"
-          >
-            Join Us
-          </button>
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
+                    Our World Class Educators
+                </h1>
+                <h3 class="text-xl md:text-2xl mb-4">Our instructors are not just teachers.</h3>
+                <p class="text-gray-500 mb-4 text-sm md:text-base">
+                    They are confidence facilitators. <br /> Each educator is trained in: <br /> • Child psychology fundamentals<br /> • Communication nurturing techniques<br /> • Stage-comfort development<br /> • Activity-based instruction<br /> • International
+                    curriculum alignment
+                </p>
+                <button class="bg-yellow-500 text-white px-6 py-2 rounded-full text-sm md:text-base">
+          Join Us
+        </button>
+            </div>
+            <div>
+                <img th:src="@{/images/fifth.webp}" class="rounded-2xl w-full" />
+            </div>
         </div>
-        <div>
-          <img th:src="@{/images/fifth.webp}" class="rounded-2xl w-full" />
-        </div>
-      </div>
     </section>
 
     <!-- 360 Management Section -->
-    <section
-      class="management text-center py-8 md:py-12 overflow-hidden"
-      x-data="{
+    <section class="management text-center py-8 md:py-12 overflow-hidden" x-data="{
 		items: [
 		  { text: 'Teacher Hiring & Training', img: '/images/360/mange1.png', pos: 'tl' },
 		  { text: 'Complete Marketing Support', img: '/images/360/mange4.png', pos: 'tr' },
@@ -400,356 +590,442 @@ function serviceSlider() {
 		  { text: 'Competitions In 20+ Countries', img: '/images/360/mange3.png', pos: 'bl' },
 		  { text: 'Guidance On Location & Infrastructure', img: '/images/360/mange2.png', pos: 'ml' },
 		]
-      }"
-    >
-      <style>
-        .management {
-          overflow-x: hidden;
-        }
+      }">
+        <style>
+            .management {
+                overflow-x: hidden;
+            }
+            
+            .management h2 {
+                font-size: clamp(32px, 8vw, 50px);
+                line-height: 1.2;
+            }
+            
+            .subtitle {
+                color: #555;
+                font-size: clamp(14px, 4vw, 18px);
+            }
+            
+            .maroon {
+                color: maroon;
+            }
+            
+            .black {
+                color: #000;
+                font-weight: 700;
+            }
+            /* ================= BASE CIRCLE ================= */
+            
+            .circle-box {
+                width: min(520px, 90vw);
+                height: min(520px, 90vw);
+                margin: 0 auto;
+                position: relative;
+                aspect-ratio: 1;
+            }
+            
+            .dashed-circle {
+                position: absolute;
+                inset: 0;
+                border: 2px dashed maroon;
+                border-radius: 50%;
+            }
+            
+            .center-img {
+                position: absolute;
+                width: min(250px, 45%);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            .item {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                gap: clamp(8px, 2vw, 14px);
+                font-size: clamp(10px, 2.5vw, 14px);
+                width: max-content;
+                max-width: min(280px, 40vw);
+            }
+            
+            .icon {
+                width: clamp(65px, 15vw, 95px);
+                height: clamp(65px, 15vw, 95px);
+                background: #fbbc04;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+            
+            .icon img {
+                width: clamp(30px, 7vw, 40px);
+            }
+            
+            .text {
+                max-width: min(140px, 30vw);
+                line-height: 1.3;
+                font-size: clamp(10px, 2.5vw, 14px);
+            }
+            /* desktop positions */
+            
+            .tl {
+                top: 70px;
+                left: 20%;
+                transform: translateX(-260px);
+            }
+            
+            .tr {
+                top: 70px;
+                left: 50%;
+                transform: translateX(160px);
+            }
+            
+            .mr {
+                top: 50%;
+                left: 50%;
+                transform: translate(220px, -50%);
+            }
+            
+            .br {
+                bottom: 30px;
+                left: 48%;
+                transform: translateX(160px);
+            }
+            
+            .bl {
+                bottom: 30px;
+                left: 25%;
+                transform: translateX(-260px);
+            }
+            
+            .ml {
+                top: 50%;
+                left: 10%;
+                transform: translate(-260px, -50%);
+            }
+            
+            .tl .text,
+            .bl .text,
+            .ml .text {
+                order: -1;
+                text-align: right;
+            }
+            /* ================= TABLET ================= */
+            
+            @media (min-width: 768px) and (max-width: 1024px) {
+                .management h2 {
+                    font-size: 44px;
+                }
+                .circle-box {
+                    width: 460px;
+                    height: 460px;
+                }
+                .center-img {
+                    width: 200px;
+                }
+                .icon {
+                    width: 80px;
+                    height: 80px;
+                }
+                .icon img {
+                    width: 34px;
+                }
+                .item {
+                    font-size: 13px;
+                }
+                .text {
+                    max-width: 130px;
+                }
+                .tl {
+                    top: 55px;
+                    transform: translateX(-220px);
+                }
+                .tr {
+                    top: 55px;
+                    transform: translateX(140px);
+                }
+                .mr {
+                    transform: translate(190px, -50%);
+                }
+                .ml {
+                    transform: translate(-220px, -50%);
+                }
+                .br {
+                    bottom: 35px;
+                    transform: translateX(140px);
+                }
+                .bl {
+                    bottom: 35px;
+                    transform: translateX(-210px);
+                }
+            }
+            /* ================= MOBILE ================= */
+            
+            @media (max-width: 576px) {
+                .circle-box {
+                    width: 320px;
+                    height: 320px;
+                    transform: scale(0.65);
+                    transform-origin: top center;
+                    margin-top: 40px;
+                }
+                .center-img {
+                    width: 180px;
+                }
+                .icon {
+                    width: 65px;
+                    height: 65px;
+                }
+                .item {
+                    font-size: 10px;
+                }
+                .text {
+                    max-width: 120px;
+                }
+                .tl {
+                    top: 32px;
+                    transform: translateX(-150px);
+                }
+                .tr {
+                    top: 32px;
+                    transform: translateX(100px);
+                }
+                .mr {
+                    transform: translate(120px, -50%);
+                }
+                .ml {
+                    transform: translate(-150px, -50%);
+                }
+                .br {
+                    bottom: 20px;
+                    transform: translateX(100px);
+                }
+                .bl {
+                    bottom: 20px;
+                    transform: translateX(-150px);
+                }
+            }
+            
+            @media (min-width: 1024px) and (max-width: 1366px) {
+                .circle-box {
+                    width: 500px;
+                    height: 500px;
+                }
+                .center-img {
+                    width: 220px;
+                }
+                .icon {
+                    width: 85px;
+                    height: 85px;
+                }
+                .icon img {
+                    width: 36px;
+                }
+                .item {
+                    font-size: 14px;
+                    gap: 12px;
+                }
+                .text {
+                    max-width: 140px;
+                }
+                .tl {
+                    top: 60px;
+                    left: 20%;
+                    transform: translateX(-245px);
+                }
+                .tr {
+                    top: 60px;
+                    left: 50%;
+                    transform: translateX(145px);
+                }
+                .mr {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(210px, -50%);
+                }
+                .ml {
+                    top: 50%;
+                    left: 10%;
+                    transform: translate(-245px, -50%);
+                }
+                .br {
+                    bottom: 40px;
+                    left: 50%;
+                    transform: translateX(145px);
+                }
+                .bl {
+                    bottom: 40px;
+                    left: 25%;
+                    transform: translateX(-245px);
+                }
+            }
+        </style>
 
-        .management h2 {
-          font-size: clamp(32px, 8vw, 50px);
-          line-height: 1.2;
-        }
+        <h2 class="fw-bold px-4">
+            360 <span class="maroon">Management</span> Support
+        </h2>
 
-        .subtitle {
-          color: #555;
-          font-size: clamp(14px, 4vw, 18px);
-        }
+        <p class="subtitle mb-6 md:mb-8 px-4">
+            Everything You Need To Make Your Pre School A Success
+        </p>
 
-        .maroon {
-          color: maroon;
-        }
-        .black {
-          color: #000;
-          font-weight: 700;
-        }
+        <div class="circle-box">
+            <div class="dashed-circle"></div>
 
-        /* ================= BASE CIRCLE ================= */
-        .circle-box {
-          width: min(520px, 90vw);
-          height: min(520px, 90vw);
-          margin: 0 auto;
-          position: relative;
-          aspect-ratio: 1;
-        }
+            <img th:src="@{/images/360/gemi.png}" class="center-img" alt="" />
 
-        .dashed-circle {
-          position: absolute;
-          inset: 0;
-          border: 2px dashed maroon;
-          border-radius: 50%;
-        }
-
-        .center-img {
-          position: absolute;
-          width: min(250px, 45%);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-
-        .item {
-          position: absolute;
-          display: flex;
-          align-items: center;
-          gap: clamp(8px, 2vw, 14px);
-          font-size: clamp(10px, 2.5vw, 14px);
-          width: max-content;
-          max-width: min(280px, 40vw);
-        }
-
-        .icon {
-          width: clamp(65px, 15vw, 95px);
-          height: clamp(65px, 15vw, 95px);
-          background: #fbbc04;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-
-        .icon img {
-          width: clamp(30px, 7vw, 40px);
-        }
-
-        .text {
-          max-width: min(140px, 30vw);
-          line-height: 1.3;
-          font-size: clamp(10px, 2.5vw, 14px);
-        }
-
-        /* desktop positions */
-        .tl {
-          top: 70px;
-          left: 20%;
-          transform: translateX(-260px);
-        }
-        .tr {
-          top: 70px;
-          left: 50%;
-          transform: translateX(160px);
-        }
-        .mr {
-          top: 50%;
-          left: 50%;
-          transform: translate(220px, -50%);
-        }
-        .br {
-          bottom: 30px;
-          left: 48%;
-          transform: translateX(160px);
-        }
-        .bl {
-          bottom: 30px;
-          left: 25%;
-          transform: translateX(-260px);
-        }
-        .ml {
-          top: 50%;
-          left: 10%;
-          transform: translate(-260px, -50%);
-        }
-
-        .tl .text,
-        .bl .text,
-        .ml .text {
-          order: -1;
-          text-align: right;
-        }
-
-        /* ================= TABLET ================= */
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-          .management h2 {
-            font-size: 44px;
-          }
-
-          .circle-box {
-            width: 460px;
-            height: 460px;
-          }
-
-          .center-img {
-            width: 200px;
-          }
-
-          .icon {
-            width: 80px;
-            height: 80px;
-          }
-          .icon img {
-            width: 34px;
-          }
-
-          .item {
-            font-size: 13px;
-          }
-          .text {
-            max-width: 130px;
-          }
-
-          .tl {
-            top: 55px;
-            transform: translateX(-360px);
-          }
-          .tr {
-            top: 55px;
-            transform: translateX(140px);
-          }
-          .mr {
-            transform: translate(190px, -50%);
-          }
-          .ml {
-            transform: translate(-420px, -50%);
-          }
-          .br {
-            bottom: 35px;
-            transform: translateX(140px);
-          }
-          .bl {
-            bottom: 35px;
-            transform: translateX(-360px);
-          }
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 576px) {
-          .circle-box {
-            width: 370px;
-            height: 370px;
-            transform: scale(0.65);
-            transform-origin: top center;
-            margin-top: 40px;
-          }
-
-          .center-img {
-            width: 180px;
-          }
-
-          .icon {
-            width: 65px;
-            height: 65px;
-          }
-
-          .item {
-            font-size: 10px;
-          }
-
-          .text {
-            max-width: 120px;
-          }
-
-          .tl {
-            top: 30px;
-            transform: translateX(-200px);
-          }
-          .tr {
-            top: 30px;
-            transform: translateX(120px);
-          }
-          .mr {
-            transform: translate(170px, -50%);
-          }
-          .ml {
-            transform: translate(-200px, -50%);
-          }
-          .br {
-            bottom: 20px;
-            transform: translateX(120px);
-          }
-          .bl {
-            bottom: 20px;
-            transform: translateX(-200px);
-          }
-        }
-
-        @media (min-width: 1024px) and (max-width: 1366px) {
-          .circle-box {
-            width: 500px;
-            height: 500px;
-          }
-
-          .center-img {
-            width: 220px;
-          }
-
-          .icon {
-            width: 85px;
-            height: 85px;
-          }
-          .icon img {
-            width: 36px;
-          }
-
-          .item {
-            font-size: 14px;
-            gap: 12px;
-          }
-
-          .text {
-            max-width: 140px;
-          }
-
-          .tl {
-            top: 60px;
-            left: 20%;
-            transform: translateX(-245px);
-          }
-          .tr {
-            top: 60px;
-            left: 50%;
-            transform: translateX(145px);
-          }
-          .mr {
-            top: 50%;
-            left: 50%;
-            transform: translate(210px, -50%);
-          }
-          .ml {
-            top: 50%;
-            left: 10%;
-            transform: translate(-245px, -50%);
-          }
-          .br {
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(145px);
-          }
-          .bl {
-            bottom: 40px;
-            left: 25%;
-            transform: translateX(-245px);
-          }
-        }
-      </style>
-
-      <h2 class="fw-bold px-4">
-        360 <span class="maroon">Management</span> Support
-      </h2>
-
-      <p class="subtitle mb-6 md:mb-8 px-4">
-        Everything You Need To Make Your Pre School A Success
-      </p>
-
-      <div class="circle-box">
-        <div class="dashed-circle"></div>
-
-        <img th:src="@{/images/360/gemi.png}" class="center-img" alt="" />
-
-        <template x-for="item in items" :key="item.text">
-          <div class="item" :class="item.pos">
-            <template
-              x-if="item.pos === 'tl' || item.pos === 'bl' || item.pos === 'ml'"
-            >
-              <span class="text black" x-text="item.text"></span>
-            </template>
+            <template x-for="item in items" :key="item.text">
+        <div class="item" :class="item.pos">
+          <template x-if="item.pos === 'tl' || item.pos === 'bl' || item.pos === 'ml'">
+            <span class="text black" x-text="item.text"></span>
+          </template>
 
             <div class="icon">
-              <img :src="item.img" alt="" />
+                <img :src="item.img" alt="" />
             </div>
 
-            <template
-              x-if="item.pos === 'tr' || item.pos === 'mr' || item.pos === 'br'"
-            >
-              <span class="text black" x-text="item.text"></span>
-            </template>
-          </div>
+            <template x-if="item.pos === 'tr' || item.pos === 'mr' || item.pos === 'br'">
+            <span class="text black" x-text="item.text"></span>
+          </template>
+        </div>
         </template>
-      </div>
+        </div>
     </section>
 
-    <!-- Mobile Navigation Menu (Hidden by default) -->
-    <div
-      class="fixed inset-0 bg-black bg-opacity-50 hidden z-50"
-      id="mobileMenu"
-    >
-      <div class="bg-white w-64 h-full p-6">
-        <button class="text-2xl mb-6">&times;</button>
-        <div class="flex flex-col gap-4">
-          <span class="font-semibold text-lg">Home</span>
-          <span class="font-semibold text-lg">About Us</span>
-          <span class="font-semibold text-lg">Admission</span>
-          <span class="font-semibold text-lg">Gallery</span>
+
+
+
+    <section class="relative left-1/2 -translate-x-1/2 w-screen bg-[#800000] text-white py-16">
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                <!-- Column 1 -->
+                <div>
+
+                    <img th:src="@{/images/whitelogo.png}" alt="Oratrics Kids Logo" class="h-20 mb-4">
+
+                    <p class="text-red-200 mb-6 leading-relaxed">
+                        Oratrics Kids Preschool focuses on nurturing creativity, confidence, and communication skills in young learners through fun learning activities.
+                    </p>
+
+                    <!-- Social Icons -->
+
+                    <div class="flex gap-5 text-xl">
+
+                        <a href="https://www.facebook.com/oratrics" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/oratricskidzz/" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@OratricsOfficial" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/oratrics/" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="font-semibold mb-5 text-lg">Quick Links</h3>
+
+                    <ul class="space-y-3 text-red-200">
+                        <li><a th:href="@{/}" class="hover:text-white">Home</a></li>
+                        <li><a th:href="@{/about}" class="hover:text-white">About Us</a></li>
+                        <li><a th:href="@{/admission}" class="hover:text-white">Admissions</a></li>
+                        <li><a th:href="@{/gallery}" class="hover:text-white">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="font-semibold mb-5 text-lg">Programs</h3>
+
+                    <ul class="space-y-3 text-red-200">
+                        <li><a href="#" class="hover:text-white">Play Group</a></li>
+                        <li><a href="#" class="hover:text-white">Nursery</a></li>
+                        <li><a href="#" class="hover:text-white">Junior KG</a></li>
+                        <li><a href="#" class="hover:text-white">Senior KG</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="font-semibold mb-5 text-lg">Contact Us</h3>
+
+                    <ul class="space-y-3 text-red-200">
+                        <li>📍 Lucknow, Uttar Pradesh</li>
+                        <li>📞 +91 745880098</li>
+                        <li>📧 contact@oratrics.com</li>
+                    </ul>
+
+                    <a th:href="@{/register}" class="inline-block mt-6 bg-yellow-400 text-black px-5 py-2 rounded font-semibold hover:bg-yellow-300">
+            Register Now
+          </a>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom -->
+
+            <div class="border-t border-red-400 mt-12 pt-6 text-center text-red-200 text-sm">
+                © 2026 Oratrics Kids Preschool. All Rights Reserved.
+            </div>
+
         </div>
-      </div>
+
+    </section>
+
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" id="mobileMenu">
+        <div class="bg-white w-64 h-full p-6">
+            <button class="text-2xl mb-6">&times;</button>
+            <div class="flex flex-col gap-4">
+                <span class="font-semibold text-lg">Home</span>
+                <span class="font-semibold text-lg">About Us</span>
+                <span class="font-semibold text-lg">Admission</span>
+                <span class="font-semibold text-lg">Gallery</span>
+            </div>
+        </div>
     </div>
 
-    <script>
-      // Simple mobile menu toggle
-      document
-        .querySelector(".md:hidden")
-        .addEventListener("click", function () {
-          document.getElementById("mobileMenu").classList.toggle("hidden");
-        });
 
-      document
-        .querySelector("#mobileMenu button")
-        .addEventListener("click", function () {
-          document.getElementById("mobileMenu").classList.add("hidden");
-        });
+
+
+
+
+
+
+
+
+    <script>
+        // Simple mobile menu toggle
+        document
+            .querySelector(".md:hidden")
+            .addEventListener("click", function() {
+                document.getElementById("mobileMenu").classList.toggle("hidden");
+            });
+
+        document
+            .querySelector("#mobileMenu button")
+            .addEventListener("click", function() {
+                document.getElementById("mobileMenu").classList.add("hidden");
+            });
     </script>
-  </body>
+</body>
+
 </html>

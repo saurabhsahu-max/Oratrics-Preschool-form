@@ -1,149 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oratrics Pre-school | Play, Learn, Grow</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-	
-	
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-	
-	<style>
-		
-		body {
-		   font-family: 'Nunito', sans-serif !important;
-		}
-	  .no-scrollbar::-webkit-scrollbar {
-	    display: none;
-	  }
 
-	  .program-card {
-	    flex: 0 0 25%;
-	  }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
 
-	  @media (max-width: 1024px) {
-	    .program-card {
-	      flex: 0 0 50%;
-	    }
-	  }
 
-	  @media (max-width: 768px) {
-	    .program-card {
-	      flex: 0 0 100%;
-	    }
-	  }
-	</style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif !important;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .program-card {
+            flex: 0 0 25%;
+        }
+        
+        @media (max-width: 1024px) {
+            .program-card {
+                flex: 0 0 50%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .program-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-	
-	<script>
-	  const slider = document.getElementById("programSlider");
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-	  setInterval(() => {
-	    slider.scrollBy({
-	      left: 320,
-	      behavior: "smooth"
-	    });
-	  }, 3000);
-	</script>
+    <script>
+        const slider = document.getElementById("programSlider");
 
-    
-  </head>
-  <body class="mx-3 sm:mx-25 m-0 p-0 lg:mx-35 xl:mx-35 font-sans text-gray-900">
+        setInterval(() => {
+            slider.scrollBy({
+                left: 320,
+                behavior: "smooth"
+            });
+        }, 3000);
+    </script>
+
+
+</head>
+
+<body class="lg:mx-35 md:mx-10 mx-4 font-sans text-gray-900 overflow-x-hidden">
     <!-- Navbar -->
-	<nav class="bg-[#FFB100] rounded-lg my-5 px-4 md:px-6 lg:px-10 py-4">
+    <nav class="bg-[#FFB100] rounded-lg my-5 px-4 md:px-6 lg:px-10 py-4">
 
-	  <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between">
 
-	    <!-- Logo -->
-	    <img
-	      th:src="@{/images/logo.png}"
-	      alt="Oratrics Logo"
-	      class="h-[40px] md:h-[50px] lg:h-[60px]"
-	    />
+            <!-- Logo -->
+            <img th:src="@{/images/logo.png}" alt="Oratrics Logo" class="h-[40px] md:h-[50px] lg:h-[60px]" />
 
-	    <!-- Menu (Tablet + Desktop) -->
-	    <div class="hidden md:flex flex-1 justify-center gap-6 lg:gap-10 font-semibold text-[15px] lg:text-[16px]">
-	      <a th:href="@{/}" class="hover:text-white">Home</a>
-	      <a th:href="@{/about}" class="hover:text-white">About Us</a>
-	      <a th:href="@{/admission}" class="hover:text-white">Admission</a>
-	      <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
-	    </div>
+            <!-- Menu (Tablet + Desktop) -->
+            <div class="hidden md:flex flex-1 justify-center gap-6 lg:gap-10 font-semibold text-[15px] lg:text-[16px]">
+                <a th:href="@{/}" class="hover:text-white">Home</a>
+                <a th:href="@{/about}" class="hover:text-white">About Us</a>
+                <a th:href="@{/admission}" class="hover:text-white">Admission</a>
+                <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
+            </div>
 
-	    <!-- Right Section -->
-	    <div class="flex items-center">
+            <!-- Right Section -->
+            <div class="flex items-center">
 
-	      <!-- Button (Tablet + Desktop) -->
-	      <a th:href="@{/register}"
-	         class="hidden md:block bg-[#8B0000] text-white px-4 lg:px-5 py-2 text-[14px] lg:text-[15px] rounded-sm">
-	        Register Now
-	      </a>
+                <!-- Button (Tablet + Desktop) -->
+                <a th:href="@{/register}" class="hidden md:block bg-[#8B0000] text-white px-4 lg:px-5 py-2 text-[14px] lg:text-[15px] rounded-sm">
+					Register Now
+				</a>
 
-	      <!-- Hamburger (Mobile Only) -->
-	      <button id="menu-btn" class="md:hidden text-3xl ml-3">
-	        ☰
-	      </button>
+                <!-- Hamburger (Mobile Only) -->
+                <button id="menu-btn" class="md:hidden text-3xl ml-3">
+					☰
+				</button>
 
-	    </div>
+            </div>
 
-	  </div>
+        </div>
 
-	  <!-- Mobile Menu -->
-	  <div id="mobile-menu"
-	       class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
 
-	      <a th:href="@{/}" class="block">Home</a>
-	      <a th:href="@{/about}" class="block">About Us</a>
-	      <a th:href="@{/admission}" class="block">Admission</a>
-	      <a th:href="@{/gallery}" class="block">Gallery</a>
+            <a th:href="@{/}" class="block">Home</a>
+            <a th:href="@{/about}" class="block">About Us</a>
+            <a th:href="@{/admission}" class="block">Admission</a>
+            <a th:href="@{/gallery}" class="block">Gallery</a>
 
-	      <a th:href="@{/register}"
-	         class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
-	        Register Now
-	      </a>
+            <a th:href="@{/register}" class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
+				Register Now
+			</a>
 
-	  </div>
+        </div>
 
-	</nav>
+    </nav>
 
-	<script>
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
 
-	const btn = document.getElementById("menu-btn");
-	const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => {
 
-	btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
 
-	  menu.classList.toggle("hidden");
+            if (menu.classList.contains("hidden")) {
+                btn.innerHTML = "☰";
+            } else {
+                btn.innerHTML = "✕";
+            }
 
-	  if(menu.classList.contains("hidden")){
-	      btn.innerHTML = "☰";
-	  } else {
-	      btn.innerHTML = "✕";
-	  }
+        });
+    </script>
 
-	});
-
-	</script>
-	
     <!-- Hero Section -->
-   
-	
-	
-	
-	<section
-	  x-data="{ 
+
+
+
+
+    <section x-data="{ 
 	    step: 1, 
 	    total: 3,
 	    autoNext() {
@@ -151,1044 +137,886 @@
 	        this.step = this.step < this.total ? this.step + 1 : 1;
 	      }, 5000)
 	    } 
-	  }"
-	  x-init="autoNext()"
-	  class="relative overflow-hidden"
-	>
+	  }" x-init="autoNext()" class="relative overflow-hidden">
 
-	<!-- Slider 1 -->
-	<div
-	  x-show="step==1"
-	  class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden"
-	>
+        <!-- Slider 1 -->
+        <div x-show="step==1" class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden">
 
-	  <!-- Video -->
-	  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-	    <source th:src="@{/videos/video1.mp4}" type="video/mp4">
-	  </video>
+            <!-- Video -->
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+				<source th:src="@{/videos/video1.mp4}" type="video/mp4">
+			</video>
 
-	  <!-- Dark Overlay -->
-	  <div class="absolute inset-0 bg-black/60"></div>
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/60"></div>
 
-	  <!-- Content -->
-	  <div class="relative z-10">
-	    <p class="text-[#ffb100] text-3xl lg:text-[5vw]/[5vw]">
-	      ADMISSIONS OPEN <br>
-	      FOR ACADEMIC <br>
-	      SESSION <span class="text-white">2026–27</span>
-	    </p>
+            <!-- Content -->
+            <div class="relative z-10">
+                <p class="text-[#ffb100] text-3xl lg:text-[5vw]/[5vw]">
+                    ADMISSIONS OPEN <br> FOR ACADEMIC <br> SESSION <span class="text-white">2026–27</span>
+                </p>
 
-	    <button class="bg-[#120E6C]  mt-5 text-white w-fit text-lg px-6 py-2 lg:px-10 lg:py-4 rounded-xl">
-	      Register Now
-	    </button>
-	  </div>
+                <button class="bg-[#120E6C]  mt-5 text-white w-fit text-lg px-6 py-2 lg:px-10 lg:py-4 rounded-xl">
+					Register Now
+				</button>
+            </div>
 
-	</div>
+        </div>
 
-	<!-- Slider 2 -->
-	<div
-	  x-show="step==2"
-	  class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden"
-	>
+        <!-- Slider 2 -->
+        <div x-show="step==2" class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden">
 
-	  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-	    <source th:src="@{/videos/video2.mp4}" type="video/mp4">
-	  </video>
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+				<source th:src="@{/videos/video2.mp4}" type="video/mp4">
+			</video>
 
-	  <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
 
-	  <div class="relative z-10 max-w-[700px]">
+            <div class="relative z-10 max-w-[700px]">
 
-	    <!-- Heading -->
-	    <h2 class="text-white uppercase font-bold 
+                <!-- Heading -->
+                <h2 class="text-white uppercase font-bold 
 	               text-[28px] lg:text-[64px] 
 	               leading-[1.1] tracking-wide">
-	      Safe Spaces for <br>
-	      Curious Explorers
-	    </h2>
+                    Safe Spaces for <br> Curious Explorers
+                </h2>
 
-	    <!-- Description -->
-	    <p class="mt-4 text-white text-[16px] lg:text-[18px] 
+                <!-- Description -->
+                <p class="mt-4 text-white text-[16px] lg:text-[18px] 
 	              inline-block 
 	              px-3 py-2 rounded">
-	      An inspiring environment that blends advanced safety
-	      with dynamic outdoor learning for young minds to
-	      explore and grow.
-	    </p>
+                    An inspiring environment that blends advanced safety with dynamic outdoor learning for young minds to explore and grow.
+                </p>
 
-	    <!-- Button -->
-	    <div class="mt-6">
-	      <button class="bg-[#fff] text-black 
+                <!-- Button -->
+                <div class="mt-6">
+                    <button class="bg-[#fff] text-black 
 	                     text-lg px-6 py-3 lg:px-10 lg:py-4 
 	                     rounded-xl hover:bg-[#e0a000] transition">
-	        Register Now
-	      </button>
-	    </div>
+						Register Now
+					</button>
+                </div>
 
-	  </div>
+            </div>
 
-	</div>
+        </div>
 
 
-	<!-- Slider 3 -->
-	<div
-	  x-show="step==3"
-	  class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden"
-	>
+        <!-- Slider 3 -->
+        <div x-show="step==3" class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden">
 
-	  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-	    <source th:src="@{/videos/video3.mp4}" type="video/mp4">
-	  </video>
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+				<source th:src="@{/videos/video3.mp4}" type="video/mp4">
+			</video>
 
-	  <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
 
-	  <div class="relative z-10 max-w-[700px]">
+            <div class="relative z-10 max-w-[700px]">
 
-	    <!-- Heading -->
-	    <h2 class="text-white uppercase font-bold 
+                <!-- Heading -->
+                <h2 class="text-white uppercase font-bold 
 	               text-[28px] lg:text-[64px] 
 	               leading-[1.1] tracking-wide">
-	      Guided by <br> Passionate <br> Educators
-	    </h2>
+                    Guided by <br> Passionate <br> Educators
+                </h2>
 
-	    <!-- Description -->
-	    <p class="mt-4 text-white text-[16px] lg:text-[18px] 
+                <!-- Description -->
+                <p class="mt-4 text-white text-[16px] lg:text-[18px] 
 	               inline-block 
 	              px-3 py-2 rounded">
-	     Where every child’s journey is nurtured with warmth, care, and a touch of magic.K.G
-	    </p>
+                    Where every child’s journey is nurtured with warmth, care, and a touch of magic.K.G
+                </p>
 
-	    <!-- Button -->
-	    <div class="mt-6">
-	      <button class="bg-[#fff] text-black 
+                <!-- Button -->
+                <div class="mt-6">
+                    <button class="bg-[#fff] text-black 
 	                     text-lg px-6 py-3 lg:px-10 lg:py-4 
 	                     rounded-xl hover:bg-[#e0a000] transition">
-	        Register Now
-	      </button>
-	    </div>
+						Register Now
+					</button>
+                </div>
 
-	  </div>
+            </div>
 
-	</div>
-
-
-	<!-- Slider Dots -->
-	<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
-	  <template x-for="i in total">
-	    <button
-	      @click="step = i"
-	      class="h-3 rounded-full transition-all duration-300"
-	      :class="step == i ? 'w-8 bg-[#FFB100]' : 'w-3 bg-white/50'"
-	    ></button>
-	  </template>
-	</div>
-
-	</section>
-	
-	
-	
-   <!-- birds Section -->
-  <section class="my-10 px-4 lg:px-10">
-  
-  <!-- Heading -->
-  <div class="flex justify-between items-center flex-wrap gap-3">
-    <h2 class="text-[#8B0000] text-2xl sm:text-3xl lg:text-4xl font-semibold">
-      Spreading <span class="text-black">Love</span> to 20+ Countries
-    </h2>
-
-    <img src="/images/bird.png" class="h-8 sm:h-10 lg:h-14 object-contain" />
-  </div>
-
-  <!-- Cards -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-
-    <!-- Card 1 -->
-    <div class="flex items-center gap-4 md:gap-5 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
-
-      <img 
-        src="/images/childavatar1.webp"
-        class="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] lg:h-[160px] lg:w-[160px] rounded-full object-cover"
-      />
-
-      <div class="flex flex-col">
-        <p class="text-[#8B0000] text-base sm:text-lg md:text-xl font-semibold leading-tight">
-          Present in 20+ <br> Countries
-        </p>
-
-        <p class="font-bold text-sm sm:text-base md:text-lg mt-2 cursor-pointer hover:text-[#8B0000]">
-          Know More
-        </p>
-      </div>
-
-    </div>
-
-
-    <!-- Card 2 -->
-    <div class="flex items-center gap-4 md:gap-5 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
-
-      <img 
-        src="/images/childavatar2.webp"
-        class="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] lg:h-[160px] lg:w-[160px] rounded-full object-cover"
-      />
-
-      <div>
-        <p class="text-[#8B0000] text-base sm:text-lg md:text-xl font-semibold leading-tight">
-          International Early Learning Standards
-        </p>
-
-        <p class="font-bold text-sm sm:text-base md:text-lg mt-2 cursor-pointer hover:text-[#8B0000]">
-          Know More
-        </p>
-      </div>
-
-    </div>
-
-
-    <!-- Card 3 -->
-    <div class="flex items-center gap-4 md:gap-5 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
-
-      <img 
-        src="/images/childavatar3.webp"
-        class="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] lg:h-[160px] lg:w-[160px] rounded-full object-cover"
-      />
-
-      <div>
-        <p class="text-[#8B0000] text-base sm:text-lg md:text-xl font-semibold leading-tight">
-          Personality + Academics + Global Exposure
-        </p>
-
-        <p class="font-bold text-sm sm:text-base md:text-lg mt-2 cursor-pointer hover:text-[#8B0000]">
-          Know More
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-	
-	
-	
-	
-	
-	
-	
-	
-    <section>
-      <div
-        class="bg-[#FFB100] flex items-center justify-around rounded-3xl p-2"
-      >
-        <div
-          class="text-[14px] lg:text-5xl px-4 flex flex-col gap-3 items-center"
-        >
-          <p>A Loving Start To</p>
-          <span
-            class="bg-[#8B0000] text-white px-2 w-[110px] lg:w-fit lg:px-10 lg:py-2 rounded-lg"
-            >Bright Future</span
-          >
         </div>
-        <img th:src="@{/images/cute.png}" class="h-[10rem] lg:h-[16vw]" />
-      </div>
+
+
+        <!-- Slider Dots -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+            <template x-for="i in total">
+				<button @click="step = i" class="h-3 rounded-full transition-all duration-300"
+					:class="step == i ? 'w-8 bg-[#FFB100]' : 'w-3 bg-white/50'"></button>
+			</template>
+        </div>
+
+    </section>
+
+
+
+    <!-- birds Section -->
+    <section class="my-10 px-4 lg:px-10">
+
+        <!-- Heading -->
+        <div class="flex justify-between items-center flex-wrap gap-3">
+            <h2 class="text-[#8B0000] text-2xl sm:text-3xl lg:text-4xl font-semibold">
+                Spreading <span class="text-black">Love</span> to 20+ Countries
+            </h2>
+
+            <img src="/images/bird.png" class="h-8 sm:h-10 lg:h-14 object-contain" />
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+            <!-- Card 1 -->
+            <div class="flex items-center gap-4 md:gap-5 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
+
+                <img src="/images/childavatar1.webp" class="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] lg:h-[160px] lg:w-[160px] rounded-full object-cover" />
+
+                <div class="flex flex-col">
+                    <p class="text-[#8B0000] text-base sm:text-lg md:text-xl font-semibold leading-tight">
+                        Present in 20+ <br> Countries
+                    </p>
+
+                    <p class="font-bold text-sm sm:text-base md:text-lg mt-2 cursor-pointer hover:text-[#8B0000]">
+                        Know More
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Card 2 -->
+            <div class="flex items-center gap-4 md:gap-5 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
+
+                <img src="/images/childavatar2.webp" class="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] lg:h-[160px] lg:w-[160px] rounded-full object-cover" />
+
+                <div>
+                    <p class="text-[#8B0000] text-base sm:text-lg md:text-xl font-semibold leading-tight">
+                        International Early Learning Standards
+                    </p>
+
+                    <p class="font-bold text-sm sm:text-base md:text-lg mt-2 cursor-pointer hover:text-[#8B0000]">
+                        Know More
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="flex items-center gap-4 md:gap-5 bg-[#F8F8F8] border border-[#E5E7EB] p-5 rounded-3xl hover:shadow-lg transition duration-300">
+
+                <img src="/images/childavatar3.webp" class="h-[90px] w-[90px] sm:h-[110px] sm:w-[110px] md:h-[130px] md:w-[130px] lg:h-[160px] lg:w-[160px] rounded-full object-cover" />
+
+                <div>
+                    <p class="text-[#8B0000] text-base sm:text-lg md:text-xl font-semibold leading-tight">
+                        Personality + Academics + Global Exposure
+                    </p>
+
+                    <p class="font-bold text-sm sm:text-base md:text-lg mt-2 cursor-pointer hover:text-[#8B0000]">
+                        Know More
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section>
+        <div class="bg-[#FFB100] flex items-center justify-around rounded-3xl p-2">
+            <div class="text-[14px] lg:text-5xl px-4 flex flex-col gap-3 items-center">
+                <p>A Loving Start To</p>
+                <span class="bg-[#8B0000] text-white px-2 w-[110px] lg:w-fit lg:px-10 lg:py-2 rounded-lg">Bright
+					Future</span>
+            </div>
+            <img th:src="@{/images/cute.png}" class="h-[10rem] lg:h-[16vw]" />
+        </div>
     </section>
 
     <!-- subhero section -->
 
     <section class="bg-white my-6 flex items-center justify-center p-6 md:p-12">
-      <div
-        class="max-w-7xl w-full flex flex-col lg:flex-row gap-12 items-center"
-      >
-        <div class="lg:w-1/3 space-y-6">
-          <h1 class="text-5xl  text-slate-900 leading-tight">
-             Make your kids master 
-          </h1>
-          <p class="text-slate-600 text-sm leading-relaxed">
-			• Confidence to speak<br>
-			• Clarity to express<br>
-			• Courage to lead<br>
-			• Intelligence to adapt<br>
-			• Exposure beyond borders
-          </p>
-          <button
-            class="bg-[#FFB800] hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
-          >
-            Book Now
-          </button>
+        <div class="max-w-7xl w-full flex flex-col lg:flex-row gap-12 items-center">
+            <div class="lg:w-1/3 space-y-6">
+                <h1 class="text-5xl  text-slate-900 leading-tight">
+                    Make your kids master
+                </h1>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    • Confidence to speak<br> • Clarity to express<br> • Courage to lead<br> • Intelligence to adapt<br> • Exposure beyond borders
+                </p>
+                <button class="bg-[#FFB800] hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95">
+					Book Now
+				</button>
+            </div>
+
+            <div class="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-3 gap-4 h-fit">
+                <div class="flex flex-col gap-4">
+                    <div class="h-2/3 rounded-2xl overflow-hidden">
+                        <img th:src="@{/images/grid1.webp}" alt="Kids playing" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="h-1/3 bg-[#FFB800] rounded-2xl p-6 flex flex-col justify-center">
+                        <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
+                        <p class="text-xs leading-snug">
+                            Your Child Is Not Just Preparing for School. They Are Preparing for the World.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <div class="h-1/2 bg-[#1A1A5E] rounded-2xl p-6 flex flex-col justify-center text-white border-2 border-blue-400">
+                        <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
+                        <p class="text-xs leading-snug opacity-90">
+                            Most preschools prepare children for Grade
+                        </p>
+                    </div>
+                    <div class="h-1/2 rounded-2xl overflow-hidden">
+                        <img th:src="@{/images/grid2.webp}" alt="Art class" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <div class="h-2/5 rounded-2xl overflow-hidden">
+                        <img th:src="@{/images/grid3.webp}" alt="Learning" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="h-3/5 bg-[#8B0000] rounded-2xl p-6 flex flex-col justify-center text-white">
+                        <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
+                        <p class="text-xs leading-snug opacity-90">
+                            The world your child will enter will demand more than alphabets and numbers.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div
-          class="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-3 gap-4 h-fit"
-        >
-          <div class="flex flex-col gap-4">
-            <div class="h-2/3 rounded-2xl overflow-hidden">
-              <img
-                th:src="@{/images/grid1.webp}"
-                alt="Kids playing"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div
-              class="h-1/3 bg-[#FFB800] rounded-2xl p-6 flex flex-col justify-center"
-            >
-              <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
-              <p class="text-xs leading-snug">
-                Your Child Is Not Just Preparing for School. They Are Preparing for the World.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <div
-              class="h-1/2 bg-[#1A1A5E] rounded-2xl p-6 flex flex-col justify-center text-white border-2 border-blue-400"
-            >
-              <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
-              <p class="text-xs leading-snug opacity-90">
-                Most preschools prepare children for Grade 
-              </p>
-            </div>
-            <div class="h-1/2 rounded-2xl overflow-hidden">
-              <img
-                th:src="@{/images/grid2.webp}"
-                alt="Art class"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <div class="h-2/5 rounded-2xl overflow-hidden">
-              <img
-                th:src="@{/images/grid3.webp}"
-                alt="Learning"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div
-              class="h-3/5 bg-[#8B0000] rounded-2xl p-6 flex flex-col justify-center text-white"
-            >
-              <h3 class="font-bold text-lg mb-2">The Oratrics Kidzz</h3>
-              <p class="text-xs leading-snug opacity-90">
-                The world your child will enter will demand more than alphabets and numbers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-	
-	
-	
-	<!-- camparision start -->
 
-	<!-- Comparison Section Start -->
 
-	<section class="w-full bg-[#F5A800] py-20">
 
-	  <div class="max-w-5xl mx-auto px-6">
+    <!-- camparision start -->
 
-	    <div class="grid md:grid-cols-2 gap-16 items-stretch">
+    <!-- Comparison Section Start -->
 
-	      <!-- LEFT CARD -->
-	      <div class="relative bg-[#EDEDED] rounded-2xl p-10">
+    <section class="w-full bg-[#F5A800] py-14 md:py-16 lg:py-20">
 
-	        <!-- Floating Title -->
-	        <div class="absolute -top-6 left-1/2 -translate-x-1/2 
-	                    bg-[#1E1B8F] text-white 
-	                    px-8 py-3 rounded-xl 
-	                    text-lg font-semibold shadow-md">
-	          Typical Preschool
-	        </div>
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-6">
 
-	        <ul class="mt-6 list-disc space-y-3 text-[18px] font-normal text-gray-500 leading-relaxed">
-	          <li>Focus on rote phonics</li>
-	          <li>Worksheets & memorisation</li>
-	          <li>Limited exposure</li>
-	          <li>Academic-only focus</li>
-	          <li>No stage exposure</li>
-	          <li>No tech integration</li>
-	        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
-	      </div>
+                <!-- LEFT CARD -->
+                <div class="relative bg-[#EDEDED] rounded-2xl p-6 sm:p-8 lg:p-10 h-full">
 
-	      <!-- RIGHT CARD -->
-	      <div class="relative bg-[#EDEDED] rounded-2xl p-10">
+                    <!-- Floating Title -->
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 
+	                    bg-[#1E1B8F] text-white
+	                    px-5 sm:px-7 py-2 sm:py-3
+	                    rounded-lg sm:rounded-xl
+	                    text-base sm:text-lg font-semibold shadow-md whitespace-nowrap">
+                        Typical Preschool
+                    </div>
 
-	        <!-- Floating Title -->
-	        <div class="absolute -top-6 left-1/2 -translate-x-1/2 
-	                    bg-[#1E1B8F] text-white 
-	                    px-8 py-3 rounded-xl 
-	                    text-lg font-semibold shadow-md">
-	          Oratrics Kidzz
-	        </div>
+                    <ul class="mt-6 sm:mt-8 list-disc space-y-2 sm:space-y-3 
+	                   text-[16px] sm:text-[17px] lg:text-[18px] 
+	                   font-normal text-gray-500 leading-relaxed pl-5">
 
-	        <ul class="mt-6 list-disc space-y-3 text-[18px] font-normal text-gray-500 leading-relaxed">
-	          <li>Advanced phonics + articulation training</li>
-	          <li>Experiential, activity-based learning</li>
-	          <li>Global student interactions (US, UK, UAE, Canada)</li>
-	          <li>Personality + Leadership + Communication</li>
-	          <li>Weekly speaking circles</li>
-	          <li>AI, Robotics & Creative Labs (age appropriate)</li>
-	        </ul>
+                        <li>Focus on rote phonics</li>
+                        <li>Worksheets & memorisation</li>
+                        <li>Limited exposure</li>
+                        <li>Academic-only focus</li>
+                        <li>No stage exposure</li>
+                        <li>No tech integration</li>
 
-	      </div>
+                    </ul>
 
-	    </div>
+                </div>
 
-	  </div>
+                <!-- RIGHT CARD -->
+                <div class="relative bg-[#EDEDED] rounded-2xl p-6 sm:p-8 lg:p-10 h-full">
 
-	</section>
+                    <!-- Floating Title -->
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 
+	                    bg-[#1E1B8F] text-white
+	                    px-5 sm:px-7 py-2 sm:py-3
+	                    rounded-lg sm:rounded-xl
+	                    text-base sm:text-lg font-semibold shadow-md whitespace-nowrap">
+                        Oratrics Kidzz
+                    </div>
 
-	<!-- Comparison Section End -->
+                    <ul class="mt-6 sm:mt-8 list-disc space-y-2 sm:space-y-3 
+	                   text-[16px] sm:text-[17px] lg:text-[18px] 
+	                   font-normal text-gray-500 leading-relaxed pl-5">
+
+                        <li>Advanced phonics + articulation training</li>
+                        <li>Experiential, activity-based learning</li>
+                        <li>Global student interactions (US, UK, UAE, Canada)</li>
+                        <li>Personality + Leadership + Communication</li>
+                        <li>Weekly speaking circles</li>
+                        <li>AI, Robotics & Creative Labs (age appropriate)</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- client say -->
     <section>
-      <div
-        class="flex flex-col lg:flex-row items-center gap-10 justify-between"
-      >
-        <image th:src="@{/images/client.png}" class="rounded-3xl" />
-        <div class="flex flex-col gap-2">
-          <span
-            class="text-sm w-fit text-[#5751E1] bg-[#EFEEFE] px-2 py-1 rounded-2xl"
-            >Testimonials</span
-          >
-          <h2 class="text-4xl font-bold text-[#8B0000]">
-            What’s our client Say About us
-          </h2>
-          <span class="flex"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fffa33"
-                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
-              />
-            </svg>
+        <div class="flex flex-col lg:flex-row items-center gap-10 justify-between">
+            <image th:src="@{/images/client.png}" class="rounded-3xl" />
+            <div class="flex flex-col gap-2">
+                <span class="text-sm w-fit text-[#5751E1] bg-[#EFEEFE] px-2 py-1 rounded-2xl">Testimonials</span>
+                <h2 class="text-4xl font-bold text-[#8B0000]">
+                    What’s our client Say About us
+                </h2>
+                <span class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="#fffa33"
+							d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z" />
+					</svg>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fffa33"
-                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fffa33"
-                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fffa33"
-                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#fffa33"
-                d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z"
-              />
-            </svg>
-          </span>
-          <p class="text-lg italic text-gray-700">
-            “Manage and streamline operations acrosers multiple locations wear
-            sales channels, and employees toter improve efficiency stre sales
-            channe amline“
-          </p>
-          <span class="text-[#5751E1] font-semibold">Brooklyn Simmons</span>
-          <span class="text-sm text-gray-500">Engineer</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="#fffa33"
+							d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z" />
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="#fffa33"
+							d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z" />
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="#fffa33"
+							d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z" />
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path fill="#fffa33"
+							d="m12 17.275l-4.15 2.5q-.275.175-.575.15t-.525-.2t-.35-.437t-.05-.588l1.1-4.725L3.775 10.8q-.25-.225-.312-.513t.037-.562t.3-.45t.55-.225l4.85-.425l1.875-4.45q.125-.3.388-.45t.537-.15t.537.15t.388.45l1.875 4.45l4.85.425q.35.05.55.225t.3.45t.038.563t-.313.512l-3.675 3.175l1.1 4.725q.075.325-.05.588t-.35.437t-.525.2t-.575-.15z" />
+					</svg>
+				</span>
+                <p class="text-lg italic text-gray-700">
+                    “Manage and streamline operations acrosers multiple locations wear sales channels, and employees toter improve efficiency stre sales channe amline“
+                </p>
+                <span class="text-[#5751E1] font-semibold">Brooklyn Simmons</span>
+                <span class="text-sm text-gray-500">Engineer</span>
+            </div>
         </div>
-      </div>
     </section>
 
-	<section class="py-16 px-4 lg:px-10 overflow-hidden">
+    <section class="py-16 px-4 lg:px-10 overflow-hidden">
 
-	  <!-- Heading -->
-	  <div class="text-center mb-12">
-	    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
-	      World Class Standards
-	    </h2>
-	  </div>
+        <!-- Heading -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
+                World Class Standards
+            </h2>
+        </div>
 
-	  <!-- Slider Wrapper -->
-	  <div class="relative overflow-hidden">
+        <!-- Slider Wrapper -->
+        <div class="relative overflow-hidden">
 
-	    <div id="slider" class="flex gap-6 transition-transform duration-700 ease-in-out">
+            <div id="slider" class="flex gap-6 transition-transform duration-700 ease-in-out">
 
-	      <!-- Card 1 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'">
+                <!-- Card 1 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">Safety and Security</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-	          The most crucial element, including CCTV cameras, secure monitored entry points and child-proof infrastructure.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">Safety and Security</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        The most crucial element, including CCTV cameras, secure monitored entry points and child-proof infrastructure.
+                    </p>
+                </div>
 
-	      <!-- Card 2 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'">
+                <!-- Card 2 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">Qualified Staff</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-				Teachers trained in early childhood education who are nurturing, patient, and skilled in positive behavior reinforcement.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">Qualified Staff</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        Teachers trained in early childhood education who are nurturing, patient, and skilled in positive behavior reinforcement.
+                    </p>
+                </div>
 
-	      <!-- Card 3 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'">
+                <!-- Card 3 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">International <br> Curriculum</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-				A mix of structured learning and free, creative play that fosters, literacy, numeracy, social skills, and global exposure.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">International <br> Curriculum</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        A mix of structured learning and free, creative play that fosters, literacy, numeracy, social skills, and global exposure.
+                    </p>
+                </div>
 
-	      <!-- Card 4 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/greenContainer.png} + ')'">
+                <!-- Card 4 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/greenContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">Child-Friendly Infrastructure</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-				Bright, clean, and safe classrooms, well-maintained outdoor play areas, and clean, accessible child-sized toilets.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">Child-Friendly Infrastructure</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        Bright, clean, and safe classrooms, well-maintained outdoor play areas, and clean, accessible child-sized toilets.
+                    </p>
+                </div>
 
-	      <!-- Card 5 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'">
+                <!-- Card 5 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">Positive Environment</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-				An atmosphere that is warm, encouraging, and fosters independence, creativity, and emotional safety.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">Positive Environment</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        An atmosphere that is warm, encouraging, and fosters independence, creativity, and emotional safety.
+                    </p>
+                </div>
 
-	      <!-- Card 6 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'">
+                <!-- Card 6 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">Health and Hygiene</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-				Regular cleaning schedules, safe drinking water, and hygienic food/snack handling.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">Health and Hygiene</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        Regular cleaning schedules, safe drinking water, and hygienic food/snack handling.
+                    </p>
+                </div>
 
-	      <!-- Card 7 -->
-	      <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white"
-	      th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'">
+                <!-- Card 7 -->
+                <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'">
 
-	        <h3 class="text-[18px] font-bold">Low Staff-Child Ratio</h3>
-	        <p class="mt-3 text-[12px] leading-tight opacity-90">
-				Ensures individual attention for every child, promoting better developmental outcomes.
-	        </p>
-	      </div>
+                    <h3 class="text-[18px] font-bold">Low Staff-Child Ratio</h3>
+                    <p class="mt-3 text-[12px] leading-tight opacity-90">
+                        Ensures individual attention for every child, promoting better developmental outcomes.
+                    </p>
+                </div>
 
-	    </div>
+            </div>
 
-	  </div>
-	</section>
+        </div>
+    </section>
 
 
-	<script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-	document.addEventListener("DOMContentLoaded", function(){
+            const slider = document.getElementById("slider");
+            const cards = slider.children;
 
-	  const slider = document.getElementById("slider");
-	  const cards = slider.children;
+            let index = 0;
 
-	  let index = 0;
+            function slideCards() {
 
-	  function slideCards(){
+                const cardWidth = cards[0].offsetWidth + 24;
 
-	    const cardWidth = cards[0].offsetWidth + 24;
+                index++;
 
-	    index++;
+                if (index > cards.length - 4) {
+                    index = 0;
+                }
 
-	    if(index > cards.length - 4){
-	      index = 0;
-	    }
+                slider.style.transform = `translateX(-${index * cardWidth}px)`;
+            }
 
-	    slider.style.transform = `translateX(-${index * cardWidth}px)`;
-	  }
+            setInterval(slideCards, 3000);
 
-	  setInterval(slideCards,3000);
+        });
+    </script>
 
-	});
 
-	</script>
+    <!-- progam cards start -->
 
-    
-      <!-- progam cards start -->
 
-	  <section class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#24135f] py-16" style="background:#24135f; padding:60px 0;">
 
-	    <div class="w-full max-w-7xl mx-auto px-6 text-center text-white">
+    <section class="relative left-1/2 -translate-x-1/2 w-screen bg-[#24135f] text-white py-16">
 
-	      <h2 class="text-3xl font-bold mb-2">
-	        Our <span class="text-yellow-400">Early Childhood Programs</span>
-	      </h2>
 
-	      <p class="opacity-80 mb-8 text-sm">
-	        Internationally Benchmarked Learning Pathways From Infancy To Kindergarten
-	      </p>
+        <div class="w-full max-w-7xl mx-auto px-6 text-center text-white">
 
-	      <div class="relative">
+            <h2 class="text-3xl font-bold mb-2">
+                Our <span class="text-yellow-400">Early Childhood Programs</span>
+            </h2>
 
-	        <!-- Slider -->
-	        <div id="programSlider"
-	             class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar">
+            <p class="opacity-80 mb-8 text-sm">
+                Internationally Benchmarked Learning Pathways From Infancy To Kindergarten
+            </p>
 
-	          <!-- 1 -->
-	          <div class="program-card bg-white rounded-4xl p-5 text-center">
-	            <img th:src="@{/images/programs/prenursery.png}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="Pre Nursery"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">Pre Nursery</h4>
-	            <p class="text-sm text-black mt-2">
-	              Play based foundation learning with sensory activities, motor skills and joyful classroom interaction.
-	            </p>
-	          </div>
+            <div class="relative">
 
-	          <!-- 2 -->
-	          <div class="program-card bg-white rounded-4xl p-5 text-center">
-	            <img th:src="@{/images/programs/nursery.png}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="Nursery"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">Nursery</h4>
-	            <p class="text-sm text-black mt-2">
-	              Language development, vocabulary building, social skills and confident expressive communication.
-	            </p>
-	          </div>
+                <!-- Slider -->
+                <div id="programSlider" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar">
 
-	          <!-- 3 -->
-	          <div class="program-card bg-white rounded-4xl p-5 text-center">
-	            <img th:src="@{/images/programs/prekg.png}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="Pre-KG"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">Pre-KG</h4>
-	            <p class="text-sm text-black mt-2">
-	              Early literacy and numeracy with storytelling, leadership games and creative thinking skills.
-	            </p>
-	          </div>
+                    <!-- 1 -->
+                    <div class="program-card bg-white rounded-4xl p-5 text-center">
+                        <img th:src="@{/images/programs/prenursery.png}" class="rounded-xl mb-4 w-full" alt="Pre Nursery" />
+                        <h4 class="font-bold text-lg text-[#24135f]">Pre Nursery</h4>
+                        <p class="text-sm text-black mt-2">
+                            Play based foundation learning with sensory activities, motor skills and joyful classroom interaction.
+                        </p>
+                    </div>
 
-	          <!-- 4 -->
-	          <div class="program-card bg-white rounded-3xl p-5 text-center">
-	            <img th:src="@{/images/programs/lkg.png}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="LKG"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">LKG</h4>
-	            <p class="text-sm text-black mt-2">
-	              Reading readiness, teamwork focus, personality growth and basic critical thinking skills.
-	            </p>
-	          </div>
+                    <!-- 2 -->
+                    <div class="program-card bg-white rounded-4xl p-5 text-center">
+                        <img th:src="@{/images/programs/nursery.png}" class="rounded-xl mb-4 w-full" alt="Nursery" />
+                        <h4 class="font-bold text-lg text-[#24135f]">Nursery</h4>
+                        <p class="text-sm text-black mt-2">
+                            Language development, vocabulary building, social skills and confident expressive communication.
+                        </p>
+                    </div>
 
-	          <!-- 5 -->
-	          <div class="program-card bg-white rounded-3xl p-5 text-center">
-	            <img th:src="@{/images/programs/ukg.png}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="UKG"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">UKG</h4>
-	            <p class="text-sm text-black mt-2">
-	              Complete school readiness with presentation skills, confidence building and emotional growth.
-	            </p>
-	          </div>
+                    <!-- 3 -->
+                    <div class="program-card bg-white rounded-4xl p-5 text-center">
+                        <img th:src="@{/images/programs/prekg.png}" class="rounded-xl mb-4 w-full" alt="Pre-KG" />
+                        <h4 class="font-bold text-lg text-[#24135f]">Pre-KG</h4>
+                        <p class="text-sm text-black mt-2">
+                            Early literacy and numeracy with storytelling, leadership games and creative thinking skills.
+                        </p>
+                    </div>
 
-	          <!-- 6 -->
-	          <div class="program-card bg-white rounded-3xl p-5 text-center">
-	            <img th:src="@{/images/programs/extend.jpeg}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="Extended Care"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">Extended Care</h4>
-	            <p class="text-sm text-black mt-2">
-	              After school support with homework help, creative activities and supervised care.
-	            </p>
-	          </div>
+                    <!-- 4 -->
+                    <div class="program-card bg-white rounded-3xl p-5 text-center">
+                        <img th:src="@{/images/programs/lkg.png}" class="rounded-xl mb-4 w-full" alt="LKG" />
+                        <h4 class="font-bold text-lg text-[#24135f]">LKG</h4>
+                        <p class="text-sm text-black mt-2">
+                            Reading readiness, teamwork focus, personality growth and basic critical thinking skills.
+                        </p>
+                    </div>
 
-	          <!-- 7 -->
-	          <div class="program-card bg-white rounded-3xl p-5 text-center">
-	            <img th:src="@{/images/programs/daycare.png}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="Daycare"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">Daycare</h4>
-	            <p class="text-sm text-black mt-2">
-	              Safe nurturing environment with play learning, communication skills and social bonding.
-	            </p>
-	          </div>
+                    <!-- 5 -->
+                    <div class="program-card bg-white rounded-3xl p-5 text-center">
+                        <img th:src="@{/images/programs/ukg.png}" class="rounded-xl mb-4 w-full" alt="UKG" />
+                        <h4 class="font-bold text-lg text-[#24135f]">UKG</h4>
+                        <p class="text-sm text-black mt-2">
+                            Complete school readiness with presentation skills, confidence building and emotional growth.
+                        </p>
+                    </div>
 
-	          <!-- 8 -->
-	          <div class="program-card bg-white rounded-3xl p-5 text-center">
-	            <img th:src="@{/images/programs/teacher.jpeg}"
-	                 class="rounded-xl mb-4 w-full"
-	                 alt="Teacher Training"/>
-	            <h4 class="font-bold text-lg text-[#24135f]">Teacher Training</h4>
-	            <p class="text-sm text-black mt-2">
-	              Professional training with modern teaching methods and classroom management skills.
-	            </p>
-	          </div>
+                    <!-- 6 -->
+                    <div class="program-card bg-white rounded-3xl p-5 text-center">
+                        <img th:src="@{/images/programs/extend.jpeg}" class="rounded-xl mb-4 w-full" alt="Extended Care" />
+                        <h4 class="font-bold text-lg text-[#24135f]">Extended Care</h4>
+                        <p class="text-sm text-black mt-2">
+                            After school support with homework help, creative activities and supervised care.
+                        </p>
+                    </div>
 
-	        </div>
+                    <!-- 7 -->
+                    <div class="program-card bg-white rounded-3xl p-5 text-center">
+                        <img th:src="@{/images/programs/daycare.png}" class="rounded-xl mb-4 w-full" alt="Daycare" />
+                        <h4 class="font-bold text-lg text-[#24135f]">Daycare</h4>
+                        <p class="text-sm text-black mt-2">
+                            Safe nurturing environment with play learning, communication skills and social bonding.
+                        </p>
+                    </div>
 
-	      </div>
+                    <!-- 8 -->
+                    <div class="program-card bg-white rounded-3xl p-5 text-center">
+                        <img th:src="@{/images/programs/teacher.jpeg}" class="rounded-xl mb-4 w-full" alt="Teacher Training" />
+                        <h4 class="font-bold text-lg text-[#24135f]">Teacher Training</h4>
+                        <p class="text-sm text-black mt-2">
+                            Professional training with modern teaching methods and classroom management skills.
+                        </p>
+                    </div>
 
-	    </div>
-	  </section>
-	  
-	  
-	  
-	  
-	  <!-- progam cards  end -->
-	  
-	  
-	  
+                </div>
 
-	  
-	  
-	  
-	  
-	  <!--  camparision  end -->
-	  
-	  
-	  
-	  
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- progam cards  end -->
+
+
+
+
+
+
+
+
+    <!--  camparision  end -->
+
+
+
+
 
     <!-- transform Video -->
-	<section class="my-10">
-	  <div
-	    class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-center px-6"
-	  >
-	    
-	    <!-- Image -->
-	    <img 
-	      th:src="@{/images/transform.png}" 
-	      alt="Oratrics Kids Learning"
-	      class="h-70 lg:h-90 object-cover"
-	    />
+    <section class="my-10">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-center px-6">
 
-	    <!-- Content -->
-	    <div class="flex flex-col gap-4 lg:w-[450px]">
+            <!-- Image -->
+            <img th:src="@{/images/transform.png}" alt="Oratrics Kids Learning" class="h-70 lg:h-90 object-cover" />
 
-	      <h2 class="text-3xl font-bold">
-	        Shape Bright Futures with Oratrics Kids
-	      </h2>
+            <!-- Content -->
+            <div class="flex flex-col gap-4 lg:w-[450px]">
 
-	      <p class="text-[#6D6C80]">
-	        At Oratrics Kids Preschool, we create a joyful and nurturing environment 
-	        where children learn through play, creativity, and interactive activities. 
-	        Our early childhood programs focus on developing communication skills, 
-	        confidence, curiosity, and social growth so that every child builds a 
-	        strong foundation for lifelong learning.
-	      </p>
+                <h2 class="text-3xl font-bold">
+                    Shape Bright Futures with Oratrics Kids
+                </h2>
 
-	      <button
-	        class="bg-[#FFB800] w-fit hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95"
-	      >
-	        Enroll Now
-	      </button>
+                <p class="text-[#6D6C80]">
+                    At Oratrics Kids Preschool, we create a joyful and nurturing environment where children learn through play, creativity, and interactive activities. Our early childhood programs focus on developing communication skills, confidence, curiosity, and social
+                    growth so that every child builds a strong foundation for lifelong learning.
+                </p>
 
-	    </div>
+                <button class="bg-[#FFB800] w-fit hover:bg-yellow-500 text-slate-900 font-bold py-3 px-10 rounded-xl shadow-lg transition-all active:scale-95">
+					Enroll Now
+				</button>
 
-	  </div>
-	</section>
+            </div>
 
-	
-	
-	
-	<!-- Articles Section Start -->
-
-	<section class="py-20 bg-white">
-	  <div class="w-[90%] max-w-[1200px] mx-auto">
-
-	    <!-- Header -->
-	    <div class="flex flex-wrap items-center gap-4 mb-10">
-
-	      <h2 class="font-bold text-[clamp(28px,4vw,50px)] leading-[1.2] text-black">
-	        What the World Is Saying About 
-	        <span class="italic text-[#800000]">Oratrics ?</span>
-	      </h2>
-
-	      <button class="ml-auto border-[1.5px] border-[#b30000] text-[#b30000] px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#b30000] hover:text-white transition">
-	        More articles ➜
-	      </button>
-
-	    </div>
-
-	    <!-- Articles Grid -->
-	    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
-
-	      <!-- Card 1 -->
-	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
-	        <img th:src="@{/images/article1.png}" class="w-full h-[160px] object-cover">
-
-	        <div class="p-4 flex flex-col justify-between flex-1">
-	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
-	            Oratrics Launches ‘The Future Human Program™’ to Equip Children with 21st-Century Life Skills
-	          </p>
-
-	          <a href="https://indianews24.asia/oratrics-launches-the-future-human-program-to-equip-children-with-21st-century-life-skills/"
-	             target="_blank"
-	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
-	             Read More
-	          </a>
-	        </div>
-	      </div>
-
-	      <!-- Card 2 -->
-	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
-	        <img th:src="@{/images/article2.webp}" class="w-full h-[160px] object-cover">
-
-	        <div class="p-4 flex flex-col justify-between flex-1">
-	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
-	            Oratrics Elevates Public Speaking & Personality Development (Yukon, Oklahoma – July 16, 2024)
-	          </p>
-
-	          <a href="https://usinsider.com/oratrics-elevates-public-speaking-personality-development/"
-	             target="_blank"
-	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
-	             Read More
-	          </a>
-	        </div>
-	      </div>
-
-	      <!-- Card 3 -->
-	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
-	        <img th:src="@{/images/article3.png}" class="w-full h-[160px] object-cover">
-
-	        <div class="p-4 flex flex-col justify-between flex-1">
-	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
-	            Oratrics Launches ‘The Future Human Program™’ to Equip Children with Real-World Skills for the 21st Century
-	          </p>
-
-	          <a href="https://indiaeducationdiary.in/oratrics-launches-the-future-human-program-to-equip-children-with-real-world-skills-for-the-21st-century/"
-	             target="_blank"
-	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
-	             Read More
-	          </a>
-	        </div>
-	      </div>
-
-	      <!-- Card 4 -->
-	      <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
-	        <img th:src="@{/images/article4.png}" class="w-full h-[160px] object-cover">
-
-	        <div class="p-4 flex flex-col justify-between flex-1">
-	          <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
-	            Oratrics launches ‘The Future Human Program’ to equip kids with 21st-Century life skills
-	          </p>
-
-	          <a href="https://mediabrief.com/oratrics-launches-the-future-human-program-to-equip-kids-with-21st-century-life-skills/"
-	             target="_blank"
-	             class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
-	             Read More
-	          </a>
-	        </div>
-	      </div>
-
-	    </div>
-
-	  </div>
-	</section>
-
-	<!-- Articles Section End -->
-	
-	
-	
-	
-	<!-- Article section end  -->
-	
-	
-	
-	
-   <footer class="my-16 px-4 lg:px-10">
-  
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-    
-    <!-- Google Map -->
-    <div class="w-full">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.137545143309!2d81.00774787489343!3d26.867370762038664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be380ae26ce41%3A0x2ba5a1fdfad55c8a!2sOratrics%3A%20The%20Future%20Human%20School!5e0!3m2!1sen!2sin!4v1771752814578!5m2!1sen!2sin"
-        class="w-full h-[250px] sm:h-[350px] lg:h-[400px] rounded-2xl border-4 border-[#8B0000]"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="bg-white p-6 sm:p-8 shadow-xl rounded-2xl w-full">
-      
-      <form class="flex flex-col gap-5">
-
-        <div>
-          <label class="text-[#8D8D8D] text-sm sm:text-base">
-            First Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter Your Name"
-            class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]"
-          />
         </div>
+    </section>
 
-        <div>
-          <label class="text-[#8D8D8D] text-sm sm:text-base">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="xyz@gmail.com"
-            class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]"
-          />
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Articles Section Start -->
+
+    <section class="py-20 bg-white">
+        <div class="w-[90%] max-w-[1200px] mx-auto">
+
+            <!-- Header -->
+            <div class="flex flex-wrap items-center gap-4 mb-10">
+
+                <h2 class="font-bold text-[clamp(28px,4vw,50px)] leading-[1.2] text-black">
+                    What the World Is Saying About
+                    <span class="italic text-[#800000]">Oratrics ?</span>
+                </h2>
+
+                <button class="ml-auto border-[1.5px] border-[#b30000] text-[#b30000] px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#b30000] hover:text-white transition">
+					More articles ➜
+				</button>
+
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mt-10">
+
+                <!-- Card 1 -->
+                <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+                    <img th:src="@{/images/article1.png}" class="w-full h-[160px] object-cover">
+
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+                            Oratrics Launches ‘The Future Human Program™’ to Equip Children with 21st-Century Life Skills
+                        </p>
+
+                        <a href="https://indianews24.asia/oratrics-launches-the-future-human-program-to-equip-children-with-21st-century-life-skills/" target="_blank" class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+							Read More
+						</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+                    <img th:src="@{/images/article2.webp}" class="w-full h-[160px] object-cover">
+
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+                            Oratrics Elevates Public Speaking & Personality Development (Yukon, Oklahoma – July 16, 2024)
+                        </p>
+
+                        <a href="https://usinsider.com/oratrics-elevates-public-speaking-personality-development/" target="_blank" class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+							Read More
+						</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+                    <img th:src="@{/images/article3.png}" class="w-full h-[160px] object-cover">
+
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+                            Oratrics Launches ‘The Future Human Program™’ to Equip Children with Real-World Skills for the 21st Century
+                        </p>
+
+                        <a href="https://indiaeducationdiary.in/oratrics-launches-the-future-human-program-to-equip-children-with-real-world-skills-for-the-21st-century/" target="_blank" class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+							Read More
+						</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-[18px] overflow-hidden shadow-lg hover:-translate-y-1 hover:shadow-xl transition flex flex-col">
+                    <img th:src="@{/images/article4.png}" class="w-full h-[160px] object-cover">
+
+                    <div class="p-4 flex flex-col justify-between flex-1">
+                        <p class="text-[14px] font-semibold leading-[1.45] line-clamp-2 text-black mb-4">
+                            Oratrics launches ‘The Future Human Program’ to equip kids with 21st-Century life skills
+                        </p>
+
+                        <a href="https://mediabrief.com/oratrics-launches-the-future-human-program-to-equip-kids-with-21st-century-life-skills/" target="_blank" class="bg-[#b30000] text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full hover:bg-[#8f0000] transition w-fit">
+							Read More
+						</a>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+    </section>
 
-        <div>
-          <label class="text-[#8D8D8D] text-sm sm:text-base">
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="+91 0000000000"
-            class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]"
-          />
-        </div>
+    <!-- Articles Section End -->
 
-        <button
-          class="bg-[#FFB100] hover:bg-[#e5a000] transition duration-300 py-3 rounded-lg font-semibold mt-3"
-        >
-          Send Message
-        </button>
 
-      </form>
-    </div>
 
-  </div>
 
-</footer>
-	
+    <!-- Article section end  -->
 
-<section class="relative left-1/2 right-1/2 -mx-[50vw] w-screen bg-[#800000] text-white py-16 overflow-x-hidden">
 
-  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-      <!-- Column 1 -->
-      <div>
+    <footer class="my-16 px-4 lg:px-10">
 
-        <img 
-          th:src="@{/images/whitelogo.png}" 
-          alt="Oratrics Kids Logo"
-          class="h-20 mb-4"
-        >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
-        <p class="text-red-200 mb-6 leading-relaxed">
-          Oratrics Kids Preschool focuses on nurturing creativity, confidence,
-          and communication skills in young learners through fun learning activities.
-        </p>
+            <!-- Google Map -->
+            <div class="w-full">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.137545143309!2d81.00774787489343!3d26.867370762038664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be380ae26ce41%3A0x2ba5a1fdfad55c8a!2sOratrics%3A%20The%20Future%20Human%20School!5e0!3m2!1sen!2sin!4v1771752814578!5m2!1sen!2sin"
+                    class="w-full h-[250px] sm:h-[350px] lg:h-[400px] rounded-2xl border-4 border-[#8B0000]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
-        <!-- Social Icons -->
+            <!-- Contact Form -->
+            <div class="bg-white p-6 sm:p-8 shadow-xl rounded-2xl w-full">
 
-        <div class="flex gap-5 text-xl">
+                <form class="flex flex-col gap-5">
 
-          <a href="https://www.facebook.com/oratrics" class="hover:text-yellow-400 transition">
-            <i class="fab fa-facebook"></i>
-          </a>
+                    <div>
+                        <label class="text-[#8D8D8D] text-sm sm:text-base">
+							First Name
+						</label>
+                        <input type="text" name="name" placeholder="Enter Your Name" class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]" />
+                    </div>
 
-          <a href="https://www.instagram.com/oratricskidzz/" class="hover:text-yellow-400 transition">
-            <i class="fab fa-instagram"></i>
-          </a>
+                    <div>
+                        <label class="text-[#8D8D8D] text-sm sm:text-base">
+							Email
+						</label>
+                        <input type="email" name="email" placeholder="xyz@gmail.com" class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]" />
+                    </div>
 
-          <a href="https://www.youtube.com/@OratricsOfficial" class="hover:text-yellow-400 transition">
-            <i class="fab fa-youtube"></i>
-          </a>
+                    <div>
+                        <label class="text-[#8D8D8D] text-sm sm:text-base">
+							Phone Number
+						</label>
+                        <input type="tel" name="phone" placeholder="+91 0000000000" class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]" />
+                    </div>
 
-          <a href="https://www.linkedin.com/company/oratrics/" class="hover:text-yellow-400 transition">
-            <i class="fab fa-linkedin"></i>
-          </a>
+                    <button class="bg-[#FFB100] hover:bg-[#e5a000] transition duration-300 py-3 rounded-lg font-semibold mt-3">
+						Send Message
+					</button>
+
+                </form>
+            </div>
 
         </div>
 
-      </div>
+    </footer>
 
-      <!-- Column 2 -->
-      <div>
-        <h3 class="font-semibold mb-5 text-lg">Quick Links</h3>
 
-        <ul class="space-y-3 text-red-200">
-          <li><a th:href="@{/}" class="hover:text-white">Home</a></li>
-          <li><a th:href="@{/about}" class="hover:text-white">About Us</a></li>
-          <li><a th:href="@{/admission}" class="hover:text-white">Admissions</a></li>
-          <li><a th:href="@{/gallery}" class="hover:text-white">Gallery</a></li>
-        </ul>
-      </div>
+    <section class="relative left-1/2 -translate-x-1/2 w-screen bg-[#800000] text-white py-16">
 
-      <!-- Column 3 -->
-      <div>
-        <h3 class="font-semibold mb-5 text-lg">Programs</h3>
 
-        <ul class="space-y-3 text-red-200">
-          <li><a href="#" class="hover:text-white">Play Group</a></li>
-          <li><a href="#" class="hover:text-white">Nursery</a></li>
-          <li><a href="#" class="hover:text-white">Junior KG</a></li>
-          <li><a href="#" class="hover:text-white">Senior KG</a></li>
-        </ul>
-      </div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
 
-      <!-- Column 4 -->
-      <div>
-        <h3 class="font-semibold mb-5 text-lg">Contact Us</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-        <ul class="space-y-3 text-red-200">
-          <li>📍 Lucknow, Uttar Pradesh</li>
-          <li>📞 +91 745880098</li>
-          <li>📧 contact@oratrics.com</li>
-        </ul>
+                <!-- Column 1 -->
+                <div>
 
-        <a th:href="@{/register}"
-          class="inline-block mt-6 bg-yellow-400 text-black px-5 py-2 rounded font-semibold hover:bg-yellow-300">
-          Register Now
-        </a>
+                    <img th:src="@{/images/whitelogo.png}" alt="Oratrics Kids Logo" class="h-20 mb-4">
 
-      </div>
+                    <p class="text-red-200 mb-6 leading-relaxed">
+                        Oratrics Kids Preschool focuses on nurturing creativity, confidence, and communication skills in young learners through fun learning activities.
+                    </p>
 
-    </div>
+                    <!-- Social Icons -->
 
-    <!-- Bottom -->
+                    <div class="flex gap-5 text-xl">
 
-    <div class="border-t border-red-400 mt-12 pt-6 text-center text-red-200 text-sm">
-      © 2026 Oratrics Kids Preschool. All Rights Reserved.
-    </div>
+                        <a href="https://www.facebook.com/oratrics" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
 
-  </div>
+                        <a href="https://www.instagram.com/oratricskidzz/" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
 
-</section>
-	
-	
-  </body>
+                        <a href="https://www.youtube.com/@OratricsOfficial" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/oratrics/" class="hover:text-yellow-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="font-semibold mb-5 text-lg">Quick Links</h3>
+
+                    <ul class="space-y-3 text-red-200">
+                        <li><a th:href="@{/}" class="hover:text-white">Home</a></li>
+                        <li><a th:href="@{/about}" class="hover:text-white">About Us</a></li>
+                        <li><a th:href="@{/admission}" class="hover:text-white">Admissions</a></li>
+                        <li><a th:href="@{/gallery}" class="hover:text-white">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="font-semibold mb-5 text-lg">Programs</h3>
+
+                    <ul class="space-y-3 text-red-200">
+                        <li><a href="#" class="hover:text-white">Play Group</a></li>
+                        <li><a href="#" class="hover:text-white">Nursery</a></li>
+                        <li><a href="#" class="hover:text-white">Junior KG</a></li>
+                        <li><a href="#" class="hover:text-white">Senior KG</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="font-semibold mb-5 text-lg">Contact Us</h3>
+
+                    <ul class="space-y-3 text-red-200">
+                        <li>📍 Lucknow, Uttar Pradesh</li>
+                        <li>📞 +91 745880098</li>
+                        <li>📧 contact@oratrics.com</li>
+                    </ul>
+
+                    <a th:href="@{/register}" class="inline-block mt-6 bg-yellow-400 text-black px-5 py-2 rounded font-semibold hover:bg-yellow-300">
+						Register Now
+					</a>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom -->
+
+            <div class="border-t border-red-400 mt-12 pt-6 text-center text-red-200 text-sm">
+                © 2026 Oratrics Kids Preschool. All Rights Reserved.
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+
 </html>
