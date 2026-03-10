@@ -1,0 +1,46 @@
+<footer th:fragment="footer1" class="my-16 px-4 lg:px-10">
+
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+           <!-- Google Map -->
+           <div class="w-full">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.137545143309!2d81.00774787489343!3d26.867370762038664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be380ae26ce41%3A0x2ba5a1fdfad55c8a!2sOratrics%3A%20The%20Future%20Human%20School!5e0!3m2!1sen!2sin!4v1771752814578!5m2!1sen!2sin"
+                   class="w-full h-[250px] sm:h-[350px] lg:h-[400px] rounded-2xl border-4 border-[#8B0000]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           </div>
+
+           <!-- Contact Form -->
+           <div class="bg-white p-6 sm:p-8 shadow-xl rounded-2xl w-full">
+
+               <form class="flex flex-col gap-5">
+
+                   <div>
+                       <label class="text-[#8D8D8D] text-sm sm:text-base">
+                           First Name
+                       </label>
+                       <input type="text" name="name" placeholder="Enter Your Name" class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]" />
+                   </div>
+
+                   <div>
+                       <label class="text-[#8D8D8D] text-sm sm:text-base">
+                           Email
+                       </label>
+                       <input type="email" name="email" placeholder="xyz@gmail.com" class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]" />
+                   </div>
+
+                   <div>
+                       <label class="text-[#8D8D8D] text-sm sm:text-base">
+                           Phone Number
+                       </label>
+                       <input type="tel" name="phone" placeholder="+91 0000000000" class="w-full border-b py-2 focus:outline-none focus:border-[#8B0000]" />
+                   </div>
+
+                   <button class="bg-[#FFB100] hover:bg-[#e5a000] transition duration-300 py-3 rounded-lg font-semibold mt-3">
+                       Send Message
+                   </button>
+
+               </form>
+           </div>
+
+       </div>
+
+   </footer>

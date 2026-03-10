@@ -1,0 +1,127 @@
+<section th:fragment="hero" x-data="{ 
+    step: 1, 
+    total: 3,
+    autoNext() {
+      setInterval(() => {
+        this.step = this.step < this.total ? this.step + 1 : 1;
+      }, 5000)
+    } 
+  }" x-init="autoNext()" class="relative overflow-hidden">
+
+      <!-- Slider 1 -->
+      <div x-show="step==1" class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden">
+
+          <!-- Video -->
+          <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source th:src="@{/videos/video1.mp4}" type="video/mp4">
+          </video>
+
+          <!-- Dark Overlay -->
+          <div class="absolute inset-0 bg-black/60"></div>
+
+          <!-- Content -->
+          <div class="relative z-10">
+              <p class="text-[#ffb100] text-3xl lg:text-[5vw]/[5vw]">
+                  ADMISSIONS OPEN <br> FOR ACADEMIC <br> SESSION <span class="text-white">2026–27</span>
+              </p>
+
+              <a href="register">
+				<button class="bg-[#120E6C]  mt-5 text-white w-fit text-lg px-6 py-2 lg:px-10 lg:py-4 rounded-xl">
+				                  Register Now
+				              </button>
+			  </a>
+          </div>
+
+      </div>
+
+      <!-- Slider 2 -->
+      <div x-show="step==2" class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden">
+
+          <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source th:src="@{/videos/video2.mp4}" type="video/mp4">
+          </video>
+
+          <div class="absolute inset-0 bg-black/60"></div>
+
+          <div class="relative z-10 max-w-[700px]">
+
+              <!-- Heading -->
+              <h2 class="text-white uppercase font-bold 
+               text-[28px] lg:text-[64px] 
+               leading-[1.1] tracking-wide">
+                  Safe Spaces for <br> Curious Explorers
+              </h2>
+
+              <!-- Description -->
+              <p class="mt-4 text-white text-[16px] lg:text-[18px] 
+              inline-block 
+              px-3 py-2 rounded">
+                  An inspiring environment that blends advanced safety with dynamic outdoor learning for young minds to explore and grow.
+              </p>
+
+              <!-- Button -->
+              <div class="mt-6">
+				<a href="register">
+                  <button class="bg-[#fff] text-black 
+                     text-lg px-6 py-3 lg:px-10 lg:py-4 
+                     rounded-xl hover:bg-[#e0a000] transition">
+                      Register Now
+                  </button>
+				  </a>
+              </div>
+
+          </div>
+
+      </div>
+
+
+      <!-- Slider 3 -->
+      <div x-show="step==3" class="relative h-[20rem] lg:h-[35vw] xl:h-[35vw] lg:px-22 lg:py-10 px-6 py-3 flex flex-col justify-center lg:justify-start gap-4 lg:gap-10 rounded-3xl overflow-hidden">
+
+          <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source th:src="@{/videos/video3.mp4}" type="video/mp4">
+          </video>
+
+          <div class="absolute inset-0 bg-black/60"></div>
+
+          <div class="relative z-10 max-w-[700px]">
+
+              <!-- Heading -->
+              <h2 class="text-white uppercase font-bold 
+               text-[28px] lg:text-[64px] 
+               leading-[1.1] tracking-wide">
+                  Guided by <br> Passionate <br> Educators
+              </h2>
+
+              <!-- Description -->
+              <p class="mt-4 text-white text-[16px] lg:text-[18px] 
+               inline-block 
+              px-3 py-2 rounded">
+                  Where every child’s journey is nurtured with warmth, care, and a touch of magic.K.G
+              </p>
+
+              <!-- Button -->
+              <div class="mt-6">
+				<a href="register">
+                  <button class="bg-[#fff] text-black 
+                     text-lg px-6 py-3 lg:px-10 lg:py-4 
+                     rounded-xl hover:bg-[#e0a000] transition">
+                      Register Now
+                  </button>
+				  </a>
+              </div>
+
+          </div>
+
+      </div>
+
+
+      <!-- Slider Dots -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+          <template x-for="i in total">
+              <button @click="step = i" class="h-3 rounded-full transition-all duration-300"
+                  :class="step == i ? 'w-8 bg-[#FFB100]' : 'w-3 bg-white/50'"></button>
+          </template>
+      </div>
+
+  </section>

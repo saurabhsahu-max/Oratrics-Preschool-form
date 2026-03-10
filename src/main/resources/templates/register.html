@@ -7,6 +7,11 @@
     <title>Oratrics Pre-school | Play, Learn, Grow</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	
+	<script th:src="@{/js/admission.js}"></script>
+	
+	
+	<script src="https://www.google.com/recaptcha/api.js?render=6LcquIUsAAAAAJdpCAuCa9GCm8H-okRMP1HjSZwQ"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -18,26 +23,7 @@
         body {
             font-family: 'Nunito', sans-serif !important;
         }
-        
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .program-card {
-            flex: 0 0 25%;
-        }
-        
-        @media (max-width: 1024px) {
-            .program-card {
-                flex: 0 0 50%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .program-card {
-                flex: 0 0 100%;
-            }
-        }
+ 
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -61,35 +47,13 @@
 
 
     <div th:replace="fragments/navbar :: navbar"></div>
+	
+	
+	<div th:replace="register/hero :: hero"></div>
 
-    <div th:replace="home/hero :: hero"></div>
-
-
-
-    <div th:replace="home/birds :: birds"></div>
-
-
-
-    <div th:replace="home/subhero :: subhero"></div>
-
-
-    <div th:replace="home/kids :: kids"></div>
-
-    <div th:replace="home/camparison :: camparison"></div>
-
-    <div th:replace="home/client :: client"></div>
-
-
-    <div th:replace="home/world :: world"></div>
-
-    <div th:replace="home/program :: program"></div>
-
-    <div th:replace="home/transform :: transform"></div>
-
-    <div th:replace="home/article :: article"></div>
-
-
-    <div th:replace="home/footer1 :: footer1"></div>
+   
+   
+   
 
 
 

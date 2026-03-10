@@ -1,0 +1,313 @@
+<section th:fragment="mange" class="management text-center py-8 md:py-12 overflow-hidden" x-data="{
+	items: [
+	  { text: 'Teacher Hiring & Training', img: '/images/360/mange1.png', pos: 'tl' },
+	  { text: 'Complete Marketing Support', img: '/images/360/mange4.png', pos: 'tr' },
+	  { text: 'Child Safe Furniture', img: '/images/360/mange5.png', pos: 'mr' },
+	  { text: 'Oratrics International Curriculum', img: '/images/360/mange6.png', pos: 'br' },
+	  { text: 'Competitions In 20+ Countries', img: '/images/360/mange3.png', pos: 'bl' },
+	  { text: 'Guidance On Location & Infrastructure', img: '/images/360/mange2.png', pos: 'ml' },
+	]
+     }">
+       <style>
+           .management {
+               overflow-x: hidden;
+           }
+           
+           .management h2 {
+               font-size: clamp(32px, 8vw, 50px);
+               line-height: 1.2;
+           }
+           
+           .subtitle {
+               color: #555;
+               font-size: clamp(14px, 4vw, 18px);
+           }
+           
+           .maroon {
+               color: maroon;
+           }
+           
+           .black {
+               color: #000;
+               font-weight: 700;
+           }
+           /* ================= BASE CIRCLE ================= */
+           
+           .circle-box {
+               width: min(520px, 90vw);
+               height: min(520px, 90vw);
+               margin: 0 auto;
+               position: relative;
+               aspect-ratio: 1;
+           }
+           
+           .dashed-circle {
+               position: absolute;
+               inset: 0;
+               border: 2px dashed maroon;
+               border-radius: 50%;
+           }
+           
+           .center-img {
+               position: absolute;
+               width: min(250px, 45%);
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+           }
+           
+           .item {
+               position: absolute;
+               display: flex;
+               align-items: center;
+               gap: clamp(8px, 2vw, 14px);
+               font-size: clamp(10px, 2.5vw, 14px);
+               width: max-content;
+               max-width: min(280px, 40vw);
+           }
+           
+           .icon {
+               width: clamp(65px, 15vw, 95px);
+               height: clamp(65px, 15vw, 95px);
+               background: #fbbc04;
+               border-radius: 50%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               flex-shrink: 0;
+           }
+           
+           .icon img {
+               width: clamp(30px, 7vw, 40px);
+           }
+           
+           .text {
+               max-width: min(140px, 30vw);
+               line-height: 1.3;
+               font-size: clamp(10px, 2.5vw, 14px);
+           }
+           /* desktop positions */
+           
+           .tl {
+               top: 70px;
+               left: 20%;
+               transform: translateX(-260px);
+           }
+           
+           .tr {
+               top: 70px;
+               left: 50%;
+               transform: translateX(160px);
+           }
+           
+           .mr {
+               top: 50%;
+               left: 50%;
+               transform: translate(220px, -50%);
+           }
+           
+           .br {
+               bottom: 30px;
+               left: 48%;
+               transform: translateX(160px);
+           }
+           
+           .bl {
+               bottom: 30px;
+               left: 25%;
+               transform: translateX(-260px);
+           }
+           
+           .ml {
+               top: 50%;
+               left: 10%;
+               transform: translate(-260px, -50%);
+           }
+           
+           .tl .text,
+           .bl .text,
+           .ml .text {
+               order: -1;
+               text-align: right;
+           }
+           /* ================= TABLET ================= */
+           
+           @media (min-width: 768px) and (max-width: 1024px) {
+               .management h2 {
+                   font-size: 44px;
+               }
+               .circle-box {
+                   width: 460px;
+                   height: 460px;
+               }
+               .center-img {
+                   width: 200px;
+               }
+               .icon {
+                   width: 80px;
+                   height: 80px;
+               }
+               .icon img {
+                   width: 34px;
+               }
+               .item {
+                   font-size: 13px;
+               }
+               .text {
+                   max-width: 130px;
+               }
+               .tl {
+                   top: 55px;
+                   transform: translateX(-220px);
+               }
+               .tr {
+                   top: 55px;
+                   transform: translateX(140px);
+               }
+               .mr {
+                   transform: translate(190px, -50%);
+               }
+               .ml {
+                   transform: translate(-220px, -50%);
+               }
+               .br {
+                   bottom: 35px;
+                   transform: translateX(140px);
+               }
+               .bl {
+                   bottom: 35px;
+                   transform: translateX(-210px);
+               }
+           }
+           /* ================= MOBILE ================= */
+           
+           @media (max-width: 576px) {
+               .circle-box {
+                   width: 320px;
+                   height: 320px;
+                   transform: scale(0.65);
+                   transform-origin: top center;
+                   margin-top: 40px;
+               }
+               .center-img {
+                   width: 180px;
+               }
+               .icon {
+                   width: 65px;
+                   height: 65px;
+               }
+               .item {
+                   font-size: 10px;
+               }
+               .text {
+                   max-width: 120px;
+               }
+               .tl {
+                   top: 32px;
+                   transform: translateX(-150px);
+               }
+               .tr {
+                   top: 32px;
+                   transform: translateX(100px);
+               }
+               .mr {
+                   transform: translate(120px, -50%);
+               }
+               .ml {
+                   transform: translate(-150px, -50%);
+               }
+               .br {
+                   bottom: 20px;
+                   transform: translateX(100px);
+               }
+               .bl {
+                   bottom: 20px;
+                   transform: translateX(-150px);
+               }
+           }
+           
+           @media (min-width: 1024px) and (max-width: 1366px) {
+               .circle-box {
+                   width: 500px;
+                   height: 500px;
+               }
+               .center-img {
+                   width: 220px;
+               }
+               .icon {
+                   width: 85px;
+                   height: 85px;
+               }
+               .icon img {
+                   width: 36px;
+               }
+               .item {
+                   font-size: 14px;
+                   gap: 12px;
+               }
+               .text {
+                   max-width: 140px;
+               }
+               .tl {
+                   top: 60px;
+                   left: 20%;
+                   transform: translateX(-245px);
+               }
+               .tr {
+                   top: 60px;
+                   left: 50%;
+                   transform: translateX(145px);
+               }
+               .mr {
+                   top: 50%;
+                   left: 50%;
+                   transform: translate(210px, -50%);
+               }
+               .ml {
+                   top: 50%;
+                   left: 10%;
+                   transform: translate(-245px, -50%);
+               }
+               .br {
+                   bottom: 40px;
+                   left: 50%;
+                   transform: translateX(145px);
+               }
+               .bl {
+                   bottom: 40px;
+                   left: 25%;
+                   transform: translateX(-245px);
+               }
+           }
+       </style>
+
+       <h2 class="fw-bold px-4">
+           360 <span class="maroon">Management</span> Support
+       </h2>
+
+       <p class="subtitle mb-6 md:mb-8 px-4">
+           Everything You Need To Make Your Pre School A Success
+       </p>
+
+       <div class="circle-box">
+           <div class="dashed-circle"></div>
+
+           <img th:src="@{/images/360/gemi.png}" class="center-img" alt="" />
+
+           <template x-for="item in items" :key="item.text">
+       <div class="item" :class="item.pos">
+         <template x-if="item.pos === 'tl' || item.pos === 'bl' || item.pos === 'ml'">
+           <span class="text black" x-text="item.text"></span>
+         </template>
+
+           <div class="icon">
+               <img :src="item.img" alt="" />
+           </div>
+
+           <template x-if="item.pos === 'tr' || item.pos === 'mr' || item.pos === 'br'">
+           <span class="text black" x-text="item.text"></span>
+         </template>
+       </div>
+       </template>
+       </div>
+   </section>

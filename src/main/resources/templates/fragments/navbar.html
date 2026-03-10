@@ -1,20 +1,81 @@
-<nav class="bg-[#FFB100] rounded-lg my-5 flex items-center justify-between p-6">
-  
-  <img
-    th:src="@{/images/logo.png}"
-    alt="Oratrics Logo"
-    class="h-[16vw] lg:h-[4vw]"
-  />
+<div th:fragment="navbar">
 
-  <div class="hidden sm:flex lg:flex md:flex items-center gap-4 font-semibold">
-    <a th:href="@{/}" class="hover:text-white">Home</a>
-    <a th:href="@{/about}" class="hover:text-white">About Us</a>
-    <a th:href="@{/admission}" class="hover:text-white">Admission</a>
-    <a th:href="@{/gallery}" class="hover:text-white">Gallery</a>
-  </div>
+<style>
+.navbar-btn{
+    background:#8B0000;
+    color:white;
+    padding:8px 20px;
+    border-radius:4px;
+}
+</style>
 
-  <a th:href="@{/register}" class="bg-[#8B0000] text-white p-2 rounded-sm">
-    Register Now
-  </a>
+<nav class="bg-[#FFB100] rounded-lg my-5 px-4 md:px-6 lg:px-10 py-4">
+
+<div class="flex items-center justify-between">
+
+<!-- Logo -->
+<img th:src="@{/images/logo.png}" class="h-[40px] md:h-[50px] lg:h-[60px]"/>
+
+<!-- Menu -->
+<div class="hidden md:flex flex-1 justify-center gap-6 lg:gap-10 font-semibold">
+<a th:href="@{/}" class="hover:text-white">Home</a>
+<a th:href="@{/about}" class="hover:text-white">About Us</a>
+<a th:href="@{/#programs}" class="hover:text-white">Programs</a>
+<a th:href="@{/#article}" class="hover:text-white">Gallery</a>
+</div>
+
+<div class="flex items-center">
+
+<a th:href="@{/register}" class="hidden md:block navbar-btn">
+Register Now
+</a>
+
+<button id="menu-btn" class="md:hidden text-3xl ml-3">
+☰
+</button>
+
+</div>
+
+</div>
+
+<!-- Mobile Menu -->
+
+<div id="mobile-menu" class="hidden flex flex-col gap-4 mt-6 font-semibold md:hidden">
+
+<a th:href="@{/}">Home</a>
+<a th:href="@{/about}">About Us</a>
+<a th:href="@{/admission}">Admission</a>
+<a th:href="@{/gallery}">Gallery</a>
+
+<a th:href="@{/register}" class="bg-[#8B0000] text-white text-center py-3 rounded w-full">
+Register Now
+</a>
+
+</div>
 
 </nav>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const btn=document.getElementById("menu-btn");
+const menu=document.getElementById("mobile-menu");
+
+btn.addEventListener("click",function(){
+
+menu.classList.toggle("hidden");
+
+if(menu.classList.contains("hidden")){
+btn.innerHTML="☰";
+}else{
+btn.innerHTML="✕";
+}
+
+});
+
+});
+
+</script>
+
+</div>

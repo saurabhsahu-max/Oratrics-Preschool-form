@@ -1,0 +1,108 @@
+<section th:fragment="world" class="py-16 px-4 lg:px-10 overflow-hidden">
+
+       <!-- Heading -->
+       <div class="text-center mb-12">
+           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
+               World Class Standards
+           </h2>
+       </div>
+
+       <!-- Slider Wrapper -->
+       <div class="relative overflow-hidden">
+
+           <div id="slider" class="flex gap-6 transition-transform duration-700 ease-in-out">
+
+               <!-- Card 1 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">Safety and Security</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       The most crucial element, including CCTV cameras, secure monitored entry points and child-proof infrastructure.
+                   </p>
+               </div>
+
+               <!-- Card 2 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">Qualified Staff</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       Teachers trained in early childhood education who are nurturing, patient, and skilled in positive behavior reinforcement.
+                   </p>
+               </div>
+
+               <!-- Card 3 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">International <br> Curriculum</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       A mix of structured learning and free, creative play that fosters, literacy, numeracy, social skills, and global exposure.
+                   </p>
+               </div>
+
+               <!-- Card 4 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/greenContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">Child-Friendly Infrastructure</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       Bright, clean, and safe classrooms, well-maintained outdoor play areas, and clean, accessible child-sized toilets.
+                   </p>
+               </div>
+
+               <!-- Card 5 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/yellowContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">Positive Environment</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       An atmosphere that is warm, encouraging, and fosters independence, creativity, and emotional safety.
+                   </p>
+               </div>
+
+               <!-- Card 6 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/maroonContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">Health and Hygiene</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       Regular cleaning schedules, safe drinking water, and hygienic food/snack handling.
+                   </p>
+               </div>
+
+               <!-- Card 7 -->
+               <div class="flex flex-col items-center justify-center text-center px-6 min-w-[85%] sm:min-w-[45%] lg:min-w-[22%] h-[350px] bg-no-repeat bg-contain bg-center text-white" th:style="'background-image: url(' + @{/images/blueContainer.png} + ')'">
+
+                   <h3 class="text-[18px] font-bold">Low Staff-Child Ratio</h3>
+                   <p class="mt-3 text-[12px] leading-tight opacity-90">
+                       Ensures individual attention for every child, promoting better developmental outcomes.
+                   </p>
+               </div>
+
+           </div>
+
+       </div>
+   </section>
+
+
+   <script>
+       document.addEventListener("DOMContentLoaded", function() {
+
+           const slider = document.getElementById("slider");
+           const cards = slider.children;
+
+           let index = 0;
+
+           function slideCards() {
+
+               const cardWidth = cards[0].offsetWidth + 24;
+
+               index++;
+
+               if (index > cards.length - 4) {
+                   index = 0;
+               }
+
+               slider.style.transform = `translateX(-${index * cardWidth}px)`;
+           }
+
+           setInterval(slideCards, 3000);
+
+       });
+   </script>
